@@ -15,7 +15,7 @@
 		FA1F95191929CF2600A0179A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F95181929CF2600A0179A /* main.m */; };
 		FA1F951D1929CF2600A0179A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F951C1929CF2600A0179A /* AppDelegate.m */; };
 		FA1F95201929CF2600A0179A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1F951E1929CF2600A0179A /* Main.storyboard */; };
-		FA1F95231929CF2600A0179A /* RunmasterGeneral.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1F95211929CF2600A0179A /* RunmasterGeneral.xcdatamodeld */; };
+		FA1F95231929CF2600A0179A /* RunMaster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1F95211929CF2600A0179A /* RunMaster.xcdatamodeld */; };
 		FA1F95261929CF2600A0179A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F95251929CF2600A0179A /* MasterViewController.m */; };
 		FA1F95291929CF2600A0179A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F95281929CF2600A0179A /* DetailViewController.m */; };
 		FA1F952B1929CF2600A0179A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1F952A1929CF2600A0179A /* Images.xcassets */; };
@@ -48,7 +48,7 @@
 		FA1F951B1929CF2600A0179A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA1F951C1929CF2600A0179A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA1F951F1929CF2600A0179A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA1F95221929CF2600A0179A /* RunmasterGeneral.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunmasterGeneral.xcdatamodel; sourceTree = "<group>"; };
+		FA1F95221929CF2600A0179A /* RunMaster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunMaster.xcdatamodel; sourceTree = "<group>"; };
 		FA1F95241929CF2600A0179A /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		FA1F95251929CF2600A0179A /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		FA1F95271929CF2600A0179A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				FA1F95271929CF2600A0179A /* DetailViewController.h */,
 				FA1F95281929CF2600A0179A /* DetailViewController.m */,
 				FA1F952A1929CF2600A0179A /* Images.xcassets */,
-				FA1F95211929CF2600A0179A /* RunmasterGeneral.xcdatamodeld */,
+				FA1F95211929CF2600A0179A /* RunMaster.xcdatamodeld */,
 				FA1F95131929CF2600A0179A /* Supporting Files */,
 			);
 			path = RunmasterGeneral;
@@ -241,7 +241,7 @@
 				FA1F95291929CF2600A0179A /* DetailViewController.m in Sources */,
 				FA1F95261929CF2600A0179A /* MasterViewController.m in Sources */,
 				FA1F951D1929CF2600A0179A /* AppDelegate.m in Sources */,
-				FA1F95231929CF2600A0179A /* RunmasterGeneral.xcdatamodeld in Sources */,
+				FA1F95231929CF2600A0179A /* RunMaster.xcdatamodeld in Sources */,
 				FA1F95191929CF2600A0179A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,13 +450,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FA1F95211929CF2600A0179A /* RunmasterGeneral.xcdatamodeld */ = {
+		FA1F95211929CF2600A0179A /* RunMaster.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FA1F95221929CF2600A0179A /* RunmasterGeneral.xcdatamodel */,
+				FA1F95221929CF2600A0179A /* RunMaster.xcdatamodel */,
 			);
-			currentVersion = FA1F95221929CF2600A0179A /* RunmasterGeneral.xcdatamodel */;
-			path = RunmasterGeneral.xcdatamodeld;
+			currentVersion = FA1F95221929CF2600A0179A /* RunMaster.xcdatamodel */;
+			path = RunMaster.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA1F95061929CF2600A0179A"
-               BuildableName = "RunmasterGeneral.app"
+               BuildableName = "RunMaster.app"
                BlueprintName = "RunMaster"
                ReferencedContainer = "container:RunMaster.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA1F952F1929CF2600A0179A"
-               BuildableName = "RunmasterGeneralTests.xctest"
+               BuildableName = "RunMasterTests.xctest"
                BlueprintName = "RunMasterTests"
                ReferencedContainer = "container:RunMaster.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA1F95061929CF2600A0179A"
-            BuildableName = "RunmasterGeneral.app"
+            BuildableName = "RunMaster.app"
             BlueprintName = "RunMaster"
             ReferencedContainer = "container:RunMaster.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA1F95061929CF2600A0179A"
-            BuildableName = "RunmasterGeneral.app"
+            BuildableName = "RunMaster.app"
             BlueprintName = "RunMaster"
             ReferencedContainer = "container:RunMaster.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA1F95061929CF2600A0179A"
-            BuildableName = "RunmasterGeneral.app"
+            BuildableName = "RunMaster.app"
             BlueprintName = "RunMaster"
             ReferencedContainer = "container:RunMaster.xcodeproj">
          </BuildableReference>
