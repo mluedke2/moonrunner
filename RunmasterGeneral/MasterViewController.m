@@ -39,6 +39,18 @@
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
     
+    // TODO: test!
+    NSMutableSet *locationSet = [NSMutableSet set];
+    for (int i = 0; i < 10; i++) {
+        NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:context];
+        
+        [locationObject setValue:[NSDate date] forKey:@"timeStamp"];
+        [locationObject setValue:[NSNumber numberWithDouble:58.3152345] forKey:@"latitude"];
+        [locationObject setValue:[NSNumber numberWithDouble:115.098057] forKey:@"longitude"];
+        [locationSet addObject:locationObject];
+    }
+    [newManagedObject setValue:locationSet forKey:@"locations"];
+    
     // Save the context.
     NSError *error = nil;
     if (![context save:&error]) {
@@ -208,7 +220,8 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    //cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [[[[object valueForKey:@"locations"] anyObject] valueForKey:@"latitude"] stringValue];
 }
 
 @end

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Location">
+    <entity name="Location" representedClassName="Location">
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date">
@@ -9,12 +9,12 @@
         <relationship name="run" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Run" inverseName="locations" inverseEntity="Run" syncable="YES"/>
         <userInfo/>
     </entity>
-    <entity name="Run" syncable="YES">
+    <entity name="Run" representedClassName="Run" syncable="YES">
         <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="locations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="run" inverseEntity="Location" syncable="YES"/>
+        <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="run" inverseEntity="Location" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Location" positionX="261" positionY="189" width="128" height="103"/>
-        <element name="Run" positionX="279" positionY="234" width="128" height="73"/>
+        <element name="Location" positionX="261" positionY="189" width="128" height="105"/>
+        <element name="Run" positionX="250" positionY="333" width="128" height="73"/>
     </elements>
 </model>
