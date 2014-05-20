@@ -18,12 +18,8 @@
 
 - (IBAction)startNewRun:(id)sender
 {
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
-    
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
     
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
     
     NSMutableSet *locationSet = [NSMutableSet set];
@@ -31,8 +27,8 @@
         NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
         
         [locationObject setValue:[NSDate date] forKey:@"timeStamp"];
-        [locationObject setValue:[NSNumber numberWithDouble:-42.3152345] forKey:@"latitude"];
-        [locationObject setValue:[NSNumber numberWithDouble:-117.098057] forKey:@"longitude"];
+        [locationObject setValue:[NSNumber numberWithDouble:-11.3152345] forKey:@"latitude"];
+        [locationObject setValue:[NSNumber numberWithDouble:-27.098057] forKey:@"longitude"];
         [locationSet addObject:locationObject];
     }
     [newManagedObject setValue:locationSet forKey:@"locations"];
@@ -40,8 +36,6 @@
     // Save the context.
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
