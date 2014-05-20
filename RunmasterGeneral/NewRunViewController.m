@@ -18,20 +18,21 @@
 
 - (IBAction)startNewRun:(id)sender
 {
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
+    
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
     
-    // TODO: test!
     NSMutableSet *locationSet = [NSMutableSet set];
     for (int i = 0; i < 10; i++) {
         NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
         
         [locationObject setValue:[NSDate date] forKey:@"timeStamp"];
-        [locationObject setValue:[NSNumber numberWithDouble:32.3152345] forKey:@"latitude"];
-        [locationObject setValue:[NSNumber numberWithDouble:115.098057] forKey:@"longitude"];
+        [locationObject setValue:[NSNumber numberWithDouble:-42.3152345] forKey:@"latitude"];
+        [locationObject setValue:[NSNumber numberWithDouble:-117.098057] forKey:@"longitude"];
         [locationSet addObject:locationObject];
     }
     [newManagedObject setValue:locationSet forKey:@"locations"];
