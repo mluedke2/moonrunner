@@ -1,6 +1,5 @@
 #import "AppDelegate.h"
-
-#import "MasterViewController.h"
+#import "HomeViewController.h"
 
 @implementation AppDelegate
 
@@ -10,6 +9,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    HomeViewController *homeViewController = [navigationController viewControllers][0];
+    homeViewController.managedObjectContext = self.managedObjectContext;
     return YES;
 }
 							

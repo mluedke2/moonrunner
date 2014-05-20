@@ -1,10 +1,10 @@
-#import "DetailViewController.h"
+#import "RunDetailsViewController.h"
 
-@interface DetailViewController ()
+@interface RunDetailsViewController ()
 - (void)configureView;
 @end
 
-@implementation DetailViewController
+@implementation RunDetailsViewController
 
 #pragma mark - Managing the detail item
 
