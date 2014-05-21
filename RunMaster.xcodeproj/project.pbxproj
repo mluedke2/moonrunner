@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0CFA8A192C734000973491 /* genericsuccess.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA0CFA89192C734000973491 /* genericsuccess.wav */; };
+		FA0CFA8D192C771900973491 /* MathController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0CFA8C192C771900973491 /* MathController.m */; };
 		FA1F950B1929CF2600A0179A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950A1929CF2600A0179A /* Foundation.framework */; };
 		FA1F950D1929CF2600A0179A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950C1929CF2600A0179A /* CoreGraphics.framework */; };
 		FA1F950F1929CF2600A0179A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950E1929CF2600A0179A /* UIKit.framework */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA0CFA89192C734000973491 /* genericsuccess.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = genericsuccess.wav; sourceTree = "<group>"; };
+		FA0CFA8B192C771900973491 /* MathController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathController.h; sourceTree = "<group>"; };
+		FA0CFA8C192C771900973491 /* MathController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathController.m; sourceTree = "<group>"; };
 		FA1F95071929CF2600A0179A /* RunMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1F950A1929CF2600A0179A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA1F950C1929CF2600A0179A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0CFA88192C732700973491 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA0CFA89192C734000973491 /* genericsuccess.wav */,
+				FA1F952A1929CF2600A0179A /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		FA1F94FE1929CF2600A0179A = {
 			isa = PBXGroup;
 			children = (
@@ -129,10 +143,10 @@
 		FA1F95121929CF2600A0179A /* RunmasterGeneral */ = {
 			isa = PBXGroup;
 			children = (
+				FA0CFA88192C732700973491 /* Resources */,
 				FA30BD0E192B17F600CD453E /* Controller */,
 				FA30BD0D192B17EC00CD453E /* View */,
 				FA30BD0C192B17DC00CD453E /* Model */,
-				FA1F952A1929CF2600A0179A /* Images.xcassets */,
 				FA1F95131929CF2600A0179A /* Supporting Files */,
 			);
 			path = RunmasterGeneral;
@@ -182,6 +196,8 @@
 				FA30BD0A192B17CF00CD453E /* NewRunViewController.m */,
 				FA30BD10192B319400CD453E /* HomeViewController.h */,
 				FA30BD11192B319400CD453E /* HomeViewController.m */,
+				FA0CFA8B192C771900973491 /* MathController.h */,
+				FA0CFA8C192C771900973491 /* MathController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -262,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0CFA8A192C734000973491 /* genericsuccess.wav in Resources */,
 				FA1F952B1929CF2600A0179A /* Images.xcassets in Resources */,
 				FA1F95171929CF2600A0179A /* InfoPlist.strings in Resources */,
 				FA1F95201929CF2600A0179A /* Main.storyboard in Resources */,
@@ -291,6 +308,7 @@
 				FA1F95231929CF2600A0179A /* RunMaster.xcdatamodeld in Sources */,
 				FA1F95191929CF2600A0179A /* main.m in Sources */,
 				FA30BD0B192B17CF00CD453E /* NewRunViewController.m in Sources */,
+				FA0CFA8D192C771900973491 /* MathController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
