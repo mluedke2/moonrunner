@@ -14,16 +14,16 @@ static bool const isMetric = NO;
 static float const metersInKM = 1000;
 static float const metersInMile = 1609.344;
 
-+ (MathController *)defaultController {
-    static MathController* s_mathController = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        s_mathController = [[MathController alloc] init];
-    });
-    return s_mathController;
-}
+//+ (MathController *)defaultController {
+//    static MathController* s_mathController = nil;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        s_mathController = [[MathController alloc] init];
+//    });
+//    return s_mathController;
+//}
 
-- (NSString *)stringifyDistance:(float)meters {
++ (NSString *)stringifyDistance:(float)meters {
     
     float unitDivider;
     NSString *unitName;
@@ -48,9 +48,9 @@ static float const metersInMile = 1609.344;
     return [NSString stringWithFormat:@"%.2f %@", (meters / unitDivider), unitName];
 }
 
-- (NSString *)stringifySecondCount:(NSNumber *)seconds {
++ (NSString *)stringifySecondCount:(int)seconds usingLongFormat:(BOOL)longFormat {
     
-    int remainingSeconds = seconds.intValue;
+    int remainingSeconds = seconds;
     
     int hours = remainingSeconds / 3600;
     
@@ -60,18 +60,30 @@ static float const metersInMile = 1609.344;
     
     remainingSeconds = remainingSeconds - minutes * 60;
     
-    if (hours > 0) {
-        return [NSString stringWithFormat:@"%ihr %imin %isec", hours, minutes, remainingSeconds];
-        
-    } else if (minutes > 0) {
-        return [NSString stringWithFormat:@"%imin %isec", minutes, remainingSeconds];
-        
+    if (longFormat) {
+        if (hours > 0) {
+            return [NSString stringWithFormat:@"%ihr %imin %isec", hours, minutes, remainingSeconds];
+            
+        } else if (minutes > 0) {
+            return [NSString stringWithFormat:@"%imin %isec", minutes, remainingSeconds];
+            
+        } else {
+            return [NSString stringWithFormat:@"%isec", remainingSeconds];
+        }
     } else {
-        return [NSString stringWithFormat:@"%isec", remainingSeconds];
+        if (hours > 0) {
+            return [NSString stringWithFormat:@"%02i:%02i:%02i", hours, minutes, remainingSeconds];
+            
+        } else if (minutes > 0) {
+            return [NSString stringWithFormat:@"%02i:%02i", minutes, remainingSeconds];
+            
+        } else {
+            return [NSString stringWithFormat:@"00:%02i", remainingSeconds];
+        }
     }
 }
 
-- (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds {
++ (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds {
     
     if (seconds == 0 || meters == 0) {
         return @"0";

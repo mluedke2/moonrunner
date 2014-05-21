@@ -10,12 +10,12 @@
 
 @interface MathController : NSObject
 
-+ (MathController *)defaultController;
+//+ (MathController *)defaultController;
 
-- (NSString *)stringifyDistance:(float)meters;
++ (NSString *)stringifyDistance:(float)meters;
 
-- (NSString *)stringifySecondCount:(NSNumber *)seconds;
++ (NSString *)stringifySecondCount:(int)seconds usingLongFormat:(BOOL)longFormat;
 
-- (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds;
++ (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds;
 
 @end

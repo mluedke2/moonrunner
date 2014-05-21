@@ -142,34 +142,25 @@
 }
 
 - (void)eachSecond {
-    
     self.seconds++;
-    
-    if (self.seconds/3600 > 0) {
-        self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i:%02i", (self.seconds/3600), ((self.seconds%3600)/60), ((self.seconds%3600)%60)];
-    } else {
-        self.timeLabel.text = [NSString stringWithFormat:@"%02i:%02i", (self.seconds/60), (self.seconds%60)];
-    }
-    
-    [self updateDistAndSpeedLabels];
+    [self updateLabels];
     [self maybePlaySound];
 }
 
-- (void)updateDistAndSpeedLabels {
-    self.distLabel.font = [UIFont fontWithName:@"GillSans-Bold" size:22.0];
-    self.distLabel.text = [[MathController defaultController] stringifyDistance:self.distance];
+- (void)updateLabels {
+    self.timeLabel.text = [MathController stringifySecondCount:self.seconds usingLongFormat:NO];
+        
+    self.distLabel.text = [MathController stringifyDistance:self.distance];
     
-    self.speedLabel.text = [[MathController defaultController] stringifyAvgPaceFromDist:self.distance overTime:self.seconds];
-    self.speedLabel.font = [UIFont fontWithName:@"GillSans-Bold" size:22.0];
-    
-    self.speedTitleLabel.text = @"Pace:";
+    self.speedLabel.text = [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds];
 }
 
 - (void) maybePlaySound {
     
     // TODO: checkpoint logic
+    BOOL justPassedCheckpoint = NO;
     
-    if (self.soundsOn) {
+    if (justPassedCheckpoint && self.soundsOn) {
         [self playSuccessSound];
     }
 }
