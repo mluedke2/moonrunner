@@ -10,6 +10,11 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "MathController.h"
+#import "Run.h"
+#import "Location.h"
+#import "RunDetailsViewController.h"
+
+static NSString * const detailSegueName = @"ShowDetails";
 
 @interface NewRunViewController () <UIActionSheetDelegate, CLLocationManagerDelegate>
 
@@ -19,6 +24,7 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSMutableArray *locations;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) Run *run;
 
 @property (nonatomic, weak) IBOutlet UILabel *promptLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeTitleLabel;
@@ -35,8 +41,12 @@
 
 @implementation NewRunViewController
 
--(IBAction)startPressed:(id)sender {
-    
+#pragma mark - Lifecycle
+
+#pragma mark - IBActions
+
+-(IBAction)startPressed:(id)sender
+{
     if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
         UIAlertView *alertView = [[UIAlertView alloc]
                                   initWithTitle:@"Location Services Not On!"
@@ -52,7 +62,7 @@
     self.startButton.hidden = YES;
     self.promptLabel.hidden = YES;
     
-    // show the running stuff
+    // show the running UI
     self.timeLabel.hidden = NO;
     self.timeTitleLabel.hidden = NO;
     self.distLabel.hidden = NO;
@@ -72,8 +82,15 @@
     [self startLocationUpdates];
 }
 
-- (void)startLocationUpdates {
-    
+- (IBAction)stopPressed:(id)sender
+{
+    // switch UI mode
+}
+
+#pragma mark - Private
+
+- (void)startLocationUpdates
+{
     // Create the location manager if this object does not
     // already have one.
     if (self.locationManager == nil) {
@@ -90,10 +107,28 @@
     [self.locationManager startUpdatingLocation];
 }
 
-// Delegate method from the CLLocationManagerDelegate protocol.
-- (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray *)locations {
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
+    [self.locationManager stopUpdatingLocation];
+    
+    // save
+    if (buttonIndex == 0) {
+        [self saveRun];
+        [self performSegueWithIdentifier:detailSegueName sender:nil];
+        
+    // discard
+    } else if (buttonIndex == 1) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
+{
     CLLocation *newLocation = [locations lastObject];
     
     NSDate *eventDate = newLocation.timestamp;
@@ -111,27 +146,29 @@
     }
 }
 
-- (IBAction)stopPressed:(id)sender {
-    
-    // switch UI mode
-}
+
+
+
+
 
 - (void)saveRun
 {
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
+    Run *newRun = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
     
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    newRun.timestamp = [NSDate date];
     
     NSMutableSet *locationSet = [NSMutableSet set];
     for (CLLocation *location in self.locations) {
-        NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+        Location *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
         
-        [locationObject setValue:location.timestamp forKey:@"timestamp"];
-        [locationObject setValue:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"latitude"];
-        [locationObject setValue:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"longitude"];
+        locationObject.timestamp = location.timestamp;
+        locationObject.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
+        locationObject.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
         [locationSet addObject:locationObject];
     }
-    [newManagedObject setValue:locationSet forKey:@"locations"];
+    
+    newRun.locations = locationSet;
+    self.run = newRun;
     
     // Save the context.
     NSError *error = nil;
@@ -141,13 +178,15 @@
     }
 }
 
-- (void)eachSecond {
+- (void)eachSecond
+{
     self.seconds++;
     [self updateLabels];
     [self maybePlaySound];
 }
 
-- (void)updateLabels {
+- (void)updateLabels
+{
     self.timeLabel.text = [MathController stringifySecondCount:self.seconds usingLongFormat:NO];
         
     self.distLabel.text = [MathController stringifyDistance:self.distance];
@@ -155,8 +194,8 @@
     self.speedLabel.text = [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds];
 }
 
-- (void) maybePlaySound {
-    
+- (void) maybePlaySound
+{
     // TODO: checkpoint logic
     BOOL justPassedCheckpoint = NO;
     
@@ -165,7 +204,8 @@
     }
 }
 
-- (void)playSuccessSound {
+- (void)playSuccessSound
+{
     //Get the filename of the sound file:
     NSString *path = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/genericsuccess.wav"];
     
@@ -205,15 +245,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:detailSegueName]) {
+        [[segue destinationViewController] setDetailItem:self.run];
+    }
 }
-*/
 
 @end

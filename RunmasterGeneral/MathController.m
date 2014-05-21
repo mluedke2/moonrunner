@@ -8,11 +8,11 @@
 
 #import "MathController.h"
 
-@implementation MathController
-
 static bool const isMetric = NO;
 static float const metersInKM = 1000;
 static float const metersInMile = 1609.344;
+
+@implementation MathController
 
 + (NSString *)stringifyDistance:(float)meters {
     
