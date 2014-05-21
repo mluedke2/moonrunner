@@ -14,7 +14,7 @@
 
 @dynamic latitude;
 @dynamic longitude;
-@dynamic timeStamp;
+@dynamic timestamp;
 @dynamic run;
 
 @end

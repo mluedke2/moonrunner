@@ -188,14 +188,14 @@
 			children = (
 				FA1F951B1929CF2600A0179A /* AppDelegate.h */,
 				FA1F951C1929CF2600A0179A /* AppDelegate.m */,
+				FA30BD10192B319400CD453E /* HomeViewController.h */,
+				FA30BD11192B319400CD453E /* HomeViewController.m */,
+				FA30BD09192B17CF00CD453E /* NewRunViewController.h */,
+				FA30BD0A192B17CF00CD453E /* NewRunViewController.m */,
 				FA1F95241929CF2600A0179A /* PastRunsViewController.h */,
 				FA1F95251929CF2600A0179A /* PastRunsViewController.m */,
 				FA1F95271929CF2600A0179A /* RunDetailsViewController.h */,
 				FA1F95281929CF2600A0179A /* RunDetailsViewController.m */,
-				FA30BD09192B17CF00CD453E /* NewRunViewController.h */,
-				FA30BD0A192B17CF00CD453E /* NewRunViewController.m */,
-				FA30BD10192B319400CD453E /* HomeViewController.h */,
-				FA30BD11192B319400CD453E /* HomeViewController.m */,
 				FA0CFA8B192C771900973491 /* MathController.h */,
 				FA0CFA8C192C771900973491 /* MathController.m */,
 			);

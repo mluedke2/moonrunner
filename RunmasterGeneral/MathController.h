@@ -10,8 +10,6 @@
 
 @interface MathController : NSObject
 
-//+ (MathController *)defaultController;
-
 + (NSString *)stringifyDistance:(float)meters;
 
 + (NSString *)stringifySecondCount:(int)seconds usingLongFormat:(BOOL)longFormat;

@@ -14,15 +14,6 @@ static bool const isMetric = NO;
 static float const metersInKM = 1000;
 static float const metersInMile = 1609.344;
 
-//+ (MathController *)defaultController {
-//    static MathController* s_mathController = nil;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        s_mathController = [[MathController alloc] init];
-//    });
-//    return s_mathController;
-//}
-
 + (NSString *)stringifyDistance:(float)meters {
     
     float unitDivider;
@@ -36,7 +27,7 @@ static float const metersInMile = 1609.344;
         // to get from meters to kilometers divide by this
         unitDivider = metersInKM;
         
-        // U.S.
+    // U.S.
     } else {
         
         unitName = @"mi";
@@ -104,7 +95,7 @@ static float const metersInMile = 1609.344;
         // to get from meters to kilometers divide by this
         unitMultiplier = metersInKM;
         
-        // U.S.
+    // U.S.
     } else {
         
         unitName = @"min/mi";

@@ -11,7 +11,7 @@
 
 @implementation Run
 
-@dynamic timeStamp;
+@dynamic timestamp;
 @dynamic locations;
 
 @end

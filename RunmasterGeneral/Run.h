@@ -12,7 +12,7 @@
 
 @interface Run : NSManagedObject
 
-@property (nonatomic, retain) NSDate * timeStamp;
+@property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSSet *locations;
 @end
 

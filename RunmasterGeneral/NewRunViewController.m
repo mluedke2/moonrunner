@@ -118,27 +118,27 @@
 
 - (void)saveRun
 {
-//    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
-//    
-//    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-//    
-//    NSMutableSet *locationSet = [NSMutableSet set];
-//    for (int i = 0; i < 10; i++) {
-//        NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
-//        
-//        [locationObject setValue:[NSDate date] forKey:@"timeStamp"];
-//        [locationObject setValue:[NSNumber numberWithDouble:-11.3152345] forKey:@"latitude"];
-//        [locationObject setValue:[NSNumber numberWithDouble:-27.098057] forKey:@"longitude"];
-//        [locationSet addObject:locationObject];
-//    }
-//    [newManagedObject setValue:locationSet forKey:@"locations"];
-//    
-//    // Save the context.
-//    NSError *error = nil;
-//    if (![self.managedObjectContext save:&error]) {
-//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//        abort();
-//    }
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
+    
+    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    
+    NSMutableSet *locationSet = [NSMutableSet set];
+    for (CLLocation *location in self.locations) {
+        NSManagedObject *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+        
+        [locationObject setValue:location.timestamp forKey:@"timestamp"];
+        [locationObject setValue:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"latitude"];
+        [locationObject setValue:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"longitude"];
+        [locationSet addObject:locationObject];
+    }
+    [newManagedObject setValue:locationSet forKey:@"locations"];
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
 }
 
 - (void)eachSecond {
