@@ -13,7 +13,5 @@
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *distanceLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *badgeImageView;
-@property (nonatomic, weak) IBOutlet UIImageView *silverImageView;
-@property (nonatomic, weak) IBOutlet UIImageView *goldImageView;
 
 @end

@@ -34,6 +34,7 @@
 		FAB9AA28192DC76B00FF8E47 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA27192DC76B00FF8E47 /* Badge.m */; };
 		FAB9AA2C192DD00400FF8E47 /* BadgesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA2B192DD00400FF8E47 /* BadgesViewController.m */; };
 		FAB9AA2F192DD01300FF8E47 /* BadgeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA2E192DD01300FF8E47 /* BadgeDetailsViewController.m */; };
+		FAB9AA32192DD64F00FF8E47 /* BadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		FAB9AA2B192DD00400FF8E47 /* BadgesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesViewController.m; sourceTree = "<group>"; };
 		FAB9AA2D192DD01300FF8E47 /* BadgeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeDetailsViewController.h; sourceTree = "<group>"; };
 		FAB9AA2E192DD01300FF8E47 /* BadgeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeDetailsViewController.m; sourceTree = "<group>"; };
+		FAB9AA30192DD64F00FF8E47 /* BadgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeCell.h; sourceTree = "<group>"; };
+		FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				FA1F951E1929CF2600A0179A /* Main.storyboard */,
 				FAB9AA20192DB4CC00FF8E47 /* RunCell.h */,
 				FAB9AA21192DB4CC00FF8E47 /* RunCell.m */,
+				FAB9AA30192DD64F00FF8E47 /* BadgeCell.h */,
+				FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				FAB9AA2F192DD01300FF8E47 /* BadgeDetailsViewController.m in Sources */,
 				FA1F951D1929CF2600A0179A /* AppDelegate.m in Sources */,
 				FA1F954A1929E36E00A0179A /* Run.m in Sources */,
+				FAB9AA32192DD64F00FF8E47 /* BadgeCell.m in Sources */,
 				FA30BD12192B319400CD453E /* HomeViewController.m in Sources */,
 				FAB9AA25192DBEB500FF8E47 /* BadgeController.m in Sources */,
 				FA1F95231929CF2600A0179A /* RunMaster.xcdatamodeld in Sources */,
