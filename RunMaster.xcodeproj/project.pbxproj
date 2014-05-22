@@ -29,6 +29,7 @@
 		FA1F954D1929E36F00A0179A /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F954C1929E36F00A0179A /* Location.m */; };
 		FA30BD0B192B17CF00CD453E /* NewRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA30BD0A192B17CF00CD453E /* NewRunViewController.m */; };
 		FA30BD12192B319400CD453E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA30BD11192B319400CD453E /* HomeViewController.m */; };
+		FAB9AA22192DB4CC00FF8E47 /* RunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA21192DB4CC00FF8E47 /* RunCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		FA30BD0A192B17CF00CD453E /* NewRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRunViewController.m; sourceTree = "<group>"; };
 		FA30BD10192B319400CD453E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FA30BD11192B319400CD453E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		FAB9AA20192DB4CC00FF8E47 /* RunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunCell.h; sourceTree = "<group>"; };
+		FAB9AA21192DB4CC00FF8E47 /* RunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				FA1F951E1929CF2600A0179A /* Main.storyboard */,
+				FAB9AA20192DB4CC00FF8E47 /* RunCell.h */,
+				FAB9AA21192DB4CC00FF8E47 /* RunCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 			files = (
 				FA1F95291929CF2600A0179A /* RunDetailsViewController.m in Sources */,
 				FA1F954D1929E36F00A0179A /* Location.m in Sources */,
+				FAB9AA22192DB4CC00FF8E47 /* RunCell.m in Sources */,
 				FA1F95261929CF2600A0179A /* PastRunsViewController.m in Sources */,
 				FA1F951D1929CF2600A0179A /* AppDelegate.m in Sources */,
 				FA1F954A1929E36E00A0179A /* Run.m in Sources */,

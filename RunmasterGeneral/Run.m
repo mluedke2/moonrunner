@@ -11,6 +11,7 @@
 
 @implementation Run
 
+@dynamic distance;
 @dynamic timestamp;
 @dynamic locations;
 

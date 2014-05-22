@@ -1,5 +1,8 @@
 #import "PastRunsViewController.h"
 #import "RunDetailsViewController.h"
+#import "Run.h"
+#import "RunCell.h"
+#import "MathController.h"
 
 @interface PastRunsViewController ()
 
@@ -39,8 +42,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
+    RunCell *cell = (RunCell *)[tableView dequeueReusableCellWithIdentifier:@"RunCell"];
+    Run *runObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    cell.dateLabel.text = [formatter stringFromDate:runObject.timestamp];
+    
+    cell.distanceLabel.text = [MathController stringifyDistance:runObject.distance.floatValue];
+    
     return cell;
 }
 
@@ -48,7 +58,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        Run *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
@@ -90,13 +100,6 @@
 	}
     
     return _fetchedResultsController;
-}    
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    //cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
-    cell.textLabel.text = [[[[object valueForKey:@"locations"] anyObject] valueForKey:@"latitude"] stringValue];
 }
 
 @end
