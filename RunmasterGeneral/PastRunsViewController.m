@@ -56,8 +56,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Run *object = [self.runArray objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        Run *run = [self.runArray objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setRun:run];
     }
 }
 
