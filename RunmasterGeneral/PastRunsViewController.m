@@ -54,10 +54,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue destinationViewController] isKindOfClass:[RunDetailsViewController class]]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Run *run = [self.runArray objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setRun:run];
+        [(RunDetailsViewController *)[segue destinationViewController] setRun:run];
     }
 }
 

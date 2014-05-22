@@ -10,7 +10,6 @@ static float const mapPadding = 1.1f;
 
 @interface RunDetailsViewController () <MKMapViewDelegate>
 
-@property (strong, nonatomic) Run *run;
 @property (strong, nonatomic) NSArray *locations;
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;

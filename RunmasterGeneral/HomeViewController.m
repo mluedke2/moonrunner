@@ -10,6 +10,7 @@
 #import "NewRunViewController.h"
 #import "PastRunsViewController.h"
 #import "BadgesTableViewController.h"
+#import "BadgeController.h"
 
 @interface HomeViewController ()
 
@@ -59,7 +60,7 @@
     } else if ([nextController isKindOfClass:[PastRunsViewController class]]) {
         ((PastRunsViewController *) nextController).runArray = self.runArray;
     } else if ([nextController isKindOfClass:[BadgesTableViewController class]]) {
-        ((BadgesTableViewController *) nextController).runArray = self.runArray;
+        ((BadgesTableViewController *) nextController).earnStatusArray = [[BadgeController defaultController] earnStatusesForRuns:self.runArray];
     }
 }
 

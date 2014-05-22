@@ -248,7 +248,7 @@ static NSString * const detailSegueName = @"ShowDetails";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:detailSegueName]) {
-        [[segue destinationViewController] setDetailItem:self.run];
+        [[segue destinationViewController] setRun:self.run];
     }
 }
 

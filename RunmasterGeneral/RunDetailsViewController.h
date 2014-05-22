@@ -4,4 +4,6 @@
 
 @interface RunDetailsViewController : UIViewController
 
+@property (strong, nonatomic) Run *run;
+
 @end
