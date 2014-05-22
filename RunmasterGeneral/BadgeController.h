@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Badge.h"
 
 @interface BadgeController : NSObject
 
@@ -19,5 +20,9 @@ typedef enum {
 + (BadgeController *)defaultController;
 
 - (NSArray *)medalStatusForRuns:(NSArray *)runArray;
+
+- (Badge *)bestBadgeForDistance:(float)distance;
+
+- (Badge *)nextBadgeForDistance:(float)distance;
 
 @end

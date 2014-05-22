@@ -31,6 +31,7 @@
 		FA30BD12192B319400CD453E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA30BD11192B319400CD453E /* HomeViewController.m */; };
 		FAB9AA22192DB4CC00FF8E47 /* RunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA21192DB4CC00FF8E47 /* RunCell.m */; };
 		FAB9AA25192DBEB500FF8E47 /* BadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA24192DBEB500FF8E47 /* BadgeController.m */; };
+		FAB9AA28192DC76B00FF8E47 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA27192DC76B00FF8E47 /* Badge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		FAB9AA21192DB4CC00FF8E47 /* RunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunCell.m; sourceTree = "<group>"; };
 		FAB9AA23192DBEB500FF8E47 /* BadgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeController.h; sourceTree = "<group>"; };
 		FAB9AA24192DBEB500FF8E47 /* BadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeController.m; sourceTree = "<group>"; };
+		FAB9AA26192DC76B00FF8E47 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Badge.h; sourceTree = "<group>"; };
+		FAB9AA27192DC76B00FF8E47 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Badge.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,8 @@
 				FA1F954C1929E36F00A0179A /* Location.m */,
 				FA1F95481929E36E00A0179A /* Run.h */,
 				FA1F95491929E36E00A0179A /* Run.m */,
+				FAB9AA26192DC76B00FF8E47 /* Badge.h */,
+				FAB9AA27192DC76B00FF8E47 /* Badge.m */,
 				FA1F95211929CF2600A0179A /* RunMaster.xcdatamodeld */,
 			);
 			name = Model;
@@ -309,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB9AA28192DC76B00FF8E47 /* Badge.m in Sources */,
 				FA1F95291929CF2600A0179A /* RunDetailsViewController.m in Sources */,
 				FA1F954D1929E36F00A0179A /* Location.m in Sources */,
 				FAB9AA22192DB4CC00FF8E47 /* RunCell.m in Sources */,
