@@ -9,6 +9,7 @@
 #import "BadgeController.h"
 #import "Badge.h"
 #import "Run.h"
+#import "BadgeEarnStatus.h"
 
 static float const silverMultiplier = 1.05;
 static float const goldMultiplier = 1.10;
@@ -63,52 +64,50 @@ static float const goldMultiplier = 1.10;
     
     for (Badge *badge in self.badges) {
         
-        Run *earnRun = NULL;
-        Run *silverRun = NULL;
-        Run *goldRun = NULL;
-        Run *bestRun = NULL;
+        BadgeEarnStatus *earnStatus = [BadgeEarnStatus new];
+        earnStatus.badge = badge;
         
         for (Run *run in runs) {
             
             if (run.distance.floatValue > badge.distance) {
                 
                 // this is when the badge was first earned
-                if (earnRun == NULL) {
-                    earnRun = run;
+                if (!earnStatus.earnRun) {
+                    earnStatus.earnRun = run;
                 }
                 
-                double earnRunSpeed = earnRun.distance.doubleValue / earnRun.duration.doubleValue;
+                double earnRunSpeed = earnStatus.earnRun.distance.doubleValue / earnStatus.earnRun.duration.doubleValue;
                 double runSpeed = run.distance.doubleValue / run.duration.doubleValue;
                 
                 // does it deserve silver?
-                if (silverRun == NULL
+                if (!earnStatus.silverRun
                     && runSpeed > earnRunSpeed * silverMultiplier) {
                     
-                    silverRun = run;
+                    earnStatus.silverRun = run;
                 }
                 
                 // does it deserve gold?
-                if (goldRun == NULL
+                if (!earnStatus.goldRun
                     && runSpeed > earnRunSpeed * goldMultiplier) {
                     
-                    goldRun = run;
+                    earnStatus.goldRun = run;
                 }
                 
                 // is it the best for this distance?
-                if (bestRun == NULL) {
-                    bestRun = run;
+                if (!earnStatus.bestRun) {
+                    earnStatus.bestRun = run;
                     
                 } else {
-                    double bestRunSpeed = bestRun.distance.doubleValue / bestRun.duration.doubleValue;
+                    double bestRunSpeed = earnStatus.bestRun.distance.doubleValue / earnStatus.bestRun.duration.doubleValue;
                     
                     if (runSpeed > bestRunSpeed) {
-                        bestRun = run;
+                        earnStatus.bestRun = run;
                     }
                 }
             }
         }
         
-        [earnStatuses addObject:[NSDictionary dictionaryWithObjectsAndKeys: badge, @"badge", earnRun, @"earnRun", bestRun, @"bestRun", silverRun, @"silverRun", goldRun, @"goldRun", nil]];
+        [earnStatuses addObject:earnStatus];
     }
     
     return earnStatuses;

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C8066945-72A8-4597-9960-0BFF21BBBE2A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RunMaster</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>15DB7805-F3C9-48F3-AA48-C0E949115E42</key>
+		<string>https://bitbucket.org/mluedke2/moonrunner.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RunMaster.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>15DB7805-F3C9-48F3-AA48-C0E949115E42</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/mluedke2/moonrunner.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>15DB7805-F3C9-48F3-AA48-C0E949115E42</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>15DB7805-F3C9-48F3-AA48-C0E949115E42</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RunmasterGeneral</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -7,6 +7,7 @@
 //
 
 #import "BadgeDetailsViewController.h"
+#import "BadgeEarnStatus.h"
 
 @interface BadgeDetailsViewController ()
 
