@@ -11,11 +11,12 @@
     </entity>
     <entity name="Run" representedClassName="Run" syncable="YES">
         <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="run" inverseEntity="Location" syncable="YES"/>
     </entity>
     <elements>
         <element name="Location" positionX="261" positionY="189" width="128" height="105"/>
-        <element name="Run" positionX="250" positionY="333" width="128" height="88"/>
+        <element name="Run" positionX="250" positionY="333" width="128" height="103"/>
     </elements>
 </model>

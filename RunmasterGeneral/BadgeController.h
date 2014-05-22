@@ -7,19 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Badge.h"
+
+@class Badge;
 
 @interface BadgeController : NSObject
 
-typedef enum {
-    kNone,
-    kSilver,
-    kGold
-} MedalStatus;
-
 + (BadgeController *)defaultController;
 
-- (NSArray *)medalStatusForRuns:(NSArray *)runArray;
+- (NSArray *)earnStatusesForRuns:(NSArray *)runArray;
 
 - (Badge *)bestBadgeForDistance:(float)distance;
 
