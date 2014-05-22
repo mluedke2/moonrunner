@@ -30,6 +30,7 @@
 		FA30BD0B192B17CF00CD453E /* NewRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA30BD0A192B17CF00CD453E /* NewRunViewController.m */; };
 		FA30BD12192B319400CD453E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA30BD11192B319400CD453E /* HomeViewController.m */; };
 		FAB9AA22192DB4CC00FF8E47 /* RunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA21192DB4CC00FF8E47 /* RunCell.m */; };
+		FAB9AA25192DBEB500FF8E47 /* BadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA24192DBEB500FF8E47 /* BadgeController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		FA30BD11192B319400CD453E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FAB9AA20192DB4CC00FF8E47 /* RunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunCell.h; sourceTree = "<group>"; };
 		FAB9AA21192DB4CC00FF8E47 /* RunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunCell.m; sourceTree = "<group>"; };
+		FAB9AA23192DBEB500FF8E47 /* BadgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeController.h; sourceTree = "<group>"; };
+		FAB9AA24192DBEB500FF8E47 /* BadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,8 @@
 				FA1F95281929CF2600A0179A /* RunDetailsViewController.m */,
 				FA0CFA8B192C771900973491 /* MathController.h */,
 				FA0CFA8C192C771900973491 /* MathController.m */,
+				FAB9AA23192DBEB500FF8E47 /* BadgeController.h */,
+				FAB9AA24192DBEB500FF8E47 /* BadgeController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				FA1F951D1929CF2600A0179A /* AppDelegate.m in Sources */,
 				FA1F954A1929E36E00A0179A /* Run.m in Sources */,
 				FA30BD12192B319400CD453E /* HomeViewController.m in Sources */,
+				FAB9AA25192DBEB500FF8E47 /* BadgeController.m in Sources */,
 				FA1F95231929CF2600A0179A /* RunMaster.xcdatamodeld in Sources */,
 				FA1F95191929CF2600A0179A /* main.m in Sources */,
 				FA30BD0B192B17CF00CD453E /* NewRunViewController.m in Sources */,
