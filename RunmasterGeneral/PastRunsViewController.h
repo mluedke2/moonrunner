@@ -1,8 +1,7 @@
 #import <UIKit/UIKit.h>
 
-@interface PastRunsViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface PastRunsViewController : UITableViewController
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSArray *runArray;
 
 @end
