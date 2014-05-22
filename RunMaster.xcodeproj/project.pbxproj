@@ -32,9 +32,9 @@
 		FAB9AA22192DB4CC00FF8E47 /* RunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA21192DB4CC00FF8E47 /* RunCell.m */; };
 		FAB9AA25192DBEB500FF8E47 /* BadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA24192DBEB500FF8E47 /* BadgeController.m */; };
 		FAB9AA28192DC76B00FF8E47 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA27192DC76B00FF8E47 /* Badge.m */; };
-		FAB9AA2C192DD00400FF8E47 /* BadgesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA2B192DD00400FF8E47 /* BadgesViewController.m */; };
 		FAB9AA2F192DD01300FF8E47 /* BadgeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA2E192DD01300FF8E47 /* BadgeDetailsViewController.m */; };
 		FAB9AA32192DD64F00FF8E47 /* BadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */; };
+		FAB9AA35192DD92300FF8E47 /* BadgesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA34192DD92300FF8E47 /* BadgesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,12 +85,12 @@
 		FAB9AA24192DBEB500FF8E47 /* BadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeController.m; sourceTree = "<group>"; };
 		FAB9AA26192DC76B00FF8E47 /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Badge.h; sourceTree = "<group>"; };
 		FAB9AA27192DC76B00FF8E47 /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Badge.m; sourceTree = "<group>"; };
-		FAB9AA2A192DD00400FF8E47 /* BadgesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgesViewController.h; sourceTree = "<group>"; };
-		FAB9AA2B192DD00400FF8E47 /* BadgesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesViewController.m; sourceTree = "<group>"; };
 		FAB9AA2D192DD01300FF8E47 /* BadgeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeDetailsViewController.h; sourceTree = "<group>"; };
 		FAB9AA2E192DD01300FF8E47 /* BadgeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeDetailsViewController.m; sourceTree = "<group>"; };
 		FAB9AA30192DD64F00FF8E47 /* BadgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeCell.h; sourceTree = "<group>"; };
 		FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeCell.m; sourceTree = "<group>"; };
+		FAB9AA33192DD92300FF8E47 /* BadgesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgesTableViewController.h; sourceTree = "<group>"; };
+		FAB9AA34192DD92300FF8E47 /* BadgesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,8 +232,8 @@
 				FA1F95251929CF2600A0179A /* PastRunsViewController.m */,
 				FA1F95271929CF2600A0179A /* RunDetailsViewController.h */,
 				FA1F95281929CF2600A0179A /* RunDetailsViewController.m */,
-				FAB9AA2A192DD00400FF8E47 /* BadgesViewController.h */,
-				FAB9AA2B192DD00400FF8E47 /* BadgesViewController.m */,
+				FAB9AA33192DD92300FF8E47 /* BadgesTableViewController.h */,
+				FAB9AA34192DD92300FF8E47 /* BadgesTableViewController.m */,
 				FAB9AA2D192DD01300FF8E47 /* BadgeDetailsViewController.h */,
 				FAB9AA2E192DD01300FF8E47 /* BadgeDetailsViewController.m */,
 			);
@@ -340,8 +340,8 @@
 				FAB9AA28192DC76B00FF8E47 /* Badge.m in Sources */,
 				FA1F95291929CF2600A0179A /* RunDetailsViewController.m in Sources */,
 				FA1F954D1929E36F00A0179A /* Location.m in Sources */,
+				FAB9AA35192DD92300FF8E47 /* BadgesTableViewController.m in Sources */,
 				FAB9AA22192DB4CC00FF8E47 /* RunCell.m in Sources */,
-				FAB9AA2C192DD00400FF8E47 /* BadgesViewController.m in Sources */,
 				FA1F95261929CF2600A0179A /* PastRunsViewController.m in Sources */,
 				FAB9AA2F192DD01300FF8E47 /* BadgeDetailsViewController.m in Sources */,
 				FA1F951D1929CF2600A0179A /* AppDelegate.m in Sources */,

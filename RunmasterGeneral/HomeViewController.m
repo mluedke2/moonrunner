@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "NewRunViewController.h"
 #import "PastRunsViewController.h"
+#import "BadgesTableViewController.h"
 
 @interface HomeViewController ()
 

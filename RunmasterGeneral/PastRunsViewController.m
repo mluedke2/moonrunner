@@ -3,6 +3,8 @@
 #import "Run.h"
 #import "RunCell.h"
 #import "MathController.h"
+#import "BadgeController.h"
+#import "Badge.h"
 
 @interface PastRunsViewController ()
 
@@ -28,11 +30,6 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [[self.fetchedResultsController sections] count];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
@@ -50,7 +47,8 @@
     
     cell.distanceLabel.text = [MathController stringifyDistance:runObject.distance.floatValue];
     
-    cell.badgeImageView.image = [];
+    Badge *badge = [[BadgeController defaultController] bestBadgeForDistance:runObject.distance.floatValue];
+    cell.badgeImageView.image = [UIImage imageNamed:badge.imageName];
     
     return cell;
 }
