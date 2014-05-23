@@ -19,6 +19,6 @@
 
 + (NSArray *)colorsForLocations:(NSArray *)locations;
 
-+ (UIColor *)colorForLineBetweenPoint:(CLLocationCoordinate2D)pointA andPoint:(CLLocationCoordinate2D)pointB givenMapArray:(NSArray *)colorCoordMapArray;
++ (UIColor *)colorForLineBetweenPoint:(CLLocationCoordinate2D)locationA andPoint:(CLLocationCoordinate2D)locationB givenMapArray:(NSArray *)colorCoordMapArray;
 
 @end

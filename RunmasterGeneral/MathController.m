@@ -155,7 +155,15 @@ static float const metersInMile = 1609.344;
     
     NSMutableArray *colors = [NSMutableArray array];
     
-    for (NSNumber *speed in speeds) {
+    for (int i = 1; i < locations.count; i++) {
+        Location *firstLoc = [locations objectAtIndex:(i-1)];
+        Location *secondLoc = [locations objectAtIndex:i];
+        
+        CLLocation *firstLocCL = [[CLLocation alloc] initWithLatitude:firstLoc.latitude.doubleValue longitude:firstLoc.longitude.doubleValue];
+        CLLocation *secondLocCL = [[CLLocation alloc] initWithLatitude:secondLoc.latitude.doubleValue longitude:secondLoc.longitude.doubleValue];
+        
+        NSNumber *speed = [speeds objectAtIndex:(i-1)];
+        UIColor *color;
         
         // between red and yellow
         if (speed.doubleValue < middleSpeed) {
@@ -163,7 +171,7 @@ static float const metersInMile = 1609.344;
             CGFloat red = ratio * (y_red - r_red);
             CGFloat green = ratio * (y_green - r_green);
             CGFloat blue = ratio * (y_blue - r_blue);
-            [colors addObject:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f]];
+            color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
             
         // between yellow and green
         } else {
@@ -171,21 +179,38 @@ static float const metersInMile = 1609.344;
             CGFloat red = ratio * (g_red - y_red);
             CGFloat green = ratio * (g_green - y_green);
             CGFloat blue = ratio * (g_blue - y_blue);
-            [colors addObject:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f]];
+            color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
         }
+        
+        [colors addObject:[NSDictionary dictionaryWithObjectsAndKeys:color, @"color", firstLocCL, @"locationA", secondLocCL, @"locationB", nil]];
     }
     
     return colors;
 }
 
-+ (UIColor *)colorForLineBetweenPoint:(CLLocationCoordinate2D)pointA andPoint:(CLLocationCoordinate2D)pointB givenMapArray:(NSArray *)colorCoordMapArray {
-    
-    
++ (UIColor *)colorForLineBetweenPoint:(CLLocationCoordinate2D)locationA andPoint:(CLLocationCoordinate2D)locationB givenMapArray:(NSArray *)colorCoordMapArray
+{
     NSUInteger index = [colorCoordMapArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         
-        // TODO: match the two points
-    
-        return YES;
+        CLLocationCoordinate2D locA = [[obj objectForKey:@"locationA"] coordinate];
+        CLLocationCoordinate2D locB = [[obj objectForKey:@"locationB"] coordinate];
+        
+        if (locationA.latitude == locA.latitude
+            && locationA.longitude == locA.longitude
+            && locationB.latitude == locB.latitude
+            && locationB.longitude == locB.longitude) {
+            
+            return YES;
+            
+        } else if (locationA.latitude == locB.latitude
+                   && locationA.longitude == locB.longitude
+                   && locationB.latitude == locA.latitude
+                   && locationB.longitude == locA.longitude) {
+            
+            return YES;
+        }
+        
+        return NO;
     }];
     
     if (index == NSNotFound) {
