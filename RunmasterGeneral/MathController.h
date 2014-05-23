@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface MathController : NSObject
 
@@ -17,5 +18,7 @@
 + (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds;
 
 + (NSArray *)colorsForLocations:(NSArray *)locations;
+
++ (UIColor *)colorForLineBetweenPoint:(CLLocationCoordinate2D)pointA andPoint:(CLLocationCoordinate2D)pointB givenMapArray:(NSArray *)colorCoordMapArray;
 
 @end

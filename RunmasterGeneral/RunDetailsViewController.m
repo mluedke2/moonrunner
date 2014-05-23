@@ -11,6 +11,7 @@ static float const mapPadding = 1.1f;
 @interface RunDetailsViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) NSArray *locations;
+@property (strong, nonatomic) NSArray *colorMapArray;
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, weak) IBOutlet UILabel *distanceLabel;
@@ -46,6 +47,7 @@ static float const mapPadding = 1.1f;
         _run = newDetailRun;
         
         self.locations = [newDetailRun.locations sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES]]];
+        self.colorMapArray = [MathController colorsForLocations:self.locations];
         
         // Update the view.
         [self configureView];
@@ -89,10 +91,10 @@ static float const mapPadding = 1.1f;
         // set the map bounds
         [self.mapView setRegion:[self mapRegion]];
         
-        // TODO: make the line(s!) on the map
-//        for (Location *location in self.run.locations) {
-//            [self.mapView addOverlay:[self polyLine]];
-//        }
+        // make the line(s!) on the map
+        for (int i = 1; i < self.locations.count; i++) {
+            [self.mapView addOverlay:[self polyLineForLocation:[self.locations objectAtIndex:(i-1)] andLocation:[self.locations objectAtIndex:i]]];
+        }
     } else {
         
         // no locations were found!
@@ -144,27 +146,30 @@ static float const mapPadding = 1.1f;
     return [self.mapView regionThatFits:region];
 }
 
-- (MKPolyline *)polyLine {
+- (MKPolyline *)polyLineForLocation:(Location *)locationA andLocation:(Location *)locationB {
     
-    CLLocationCoordinate2D coords[self.locations.count];
+    CLLocationCoordinate2D coords[2];
     
-    for (int i = 0; i < self.run.locations.count; i++) {
-        Location *location = [self.locations objectAtIndex:i];
-        coords[i] = CLLocationCoordinate2DMake(location.latitude.doubleValue, location.longitude.doubleValue);
-    }
+    coords[0] = CLLocationCoordinate2DMake(locationA.latitude.doubleValue, locationA.longitude.doubleValue);
+    coords[1] = CLLocationCoordinate2DMake(locationB.latitude.doubleValue, locationB.longitude.doubleValue);
     
-    return [MKPolyline polylineWithCoordinates:coords count:self.locations.count];
+    return [MKPolyline polylineWithCoordinates:coords count:2];
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay {
     
     if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolyline *polyLine = (MKPolyline *)overlay;
         
-        MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:(MKPolyline *)overlay];
+        MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
         
         aRenderer.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:0.2];
         
-        aRenderer.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+        MKMapPoint *points = [polyLine points];
+        MKMapPoint pointA = points[0];
+        MKMapPoint pointB = points[1];
+        
+        aRenderer.strokeColor = [MathController colorForLineBetweenPoint:MKCoordinateForMapPoint(pointA) andPoint:MKCoordinateForMapPoint(pointB) givenMapArray:self.colorMapArray];
         
         aRenderer.lineWidth = 3;
         

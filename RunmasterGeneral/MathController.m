@@ -8,7 +8,6 @@
 
 #import "MathController.h"
 #import "Location.h"
-#import <CoreLocation/CoreLocation.h>
 
 static bool const isMetric = NO;
 static float const metersInKM = 1000;
@@ -177,6 +176,23 @@ static float const metersInMile = 1609.344;
     }
     
     return colors;
+}
+
++ (UIColor *)colorForLineBetweenPoint:(CLLocationCoordinate2D)pointA andPoint:(CLLocationCoordinate2D)pointB givenMapArray:(NSArray *)colorCoordMapArray {
+    
+    
+    NSUInteger index = [colorCoordMapArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        
+        // TODO: match the two points
+    
+        return YES;
+    }];
+    
+    if (index == NSNotFound) {
+        return [UIColor clearColor];
+    }
+    
+    return [[colorCoordMapArray objectAtIndex:index] objectForKey:@"color"];
 }
 
 @end
