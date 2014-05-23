@@ -76,8 +76,8 @@ static float const metersInMile = 1609.344;
     }
 }
 
-+ (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds {
-    
++ (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds
+{
     if (seconds == 0 || meters == 0) {
         return @"0";
     }
@@ -112,27 +112,19 @@ static float const metersInMile = 1609.344;
     return [NSString stringWithFormat:@"%i:%02i %@", paceMin, paceSec, unitName];
 }
 
-+ (NSArray *)colorsForLocations:(NSArray *)locations {
-    UIColor *redColor = [UIColor colorWithRed:1.0f green:20/255.0 blue:44/255.0 alpha:1.0f];
-    UIColor *yellowColor = [UIColor colorWithRed:1.0f green:215/255.0f blue:0.0f alpha:1.0f];
-    UIColor *greenColor = [UIColor colorWithRed:0.0f green:146/255.0 blue:78/255.0 alpha:1.0f];
-    
++ (NSArray *)colorsForLocations:(NSArray *)locations
+{
+    // make array of all speeds, find slowest+fastest
     NSMutableArray *speeds = [NSMutableArray array];
-    Location *firstLoc;
-    Location *secondLoc;
-    CLLocation *firstLocCL = [CLLocation alloc];
-    CLLocation *secondLocCL = [CLLocation alloc];
-    
     double slowestSpeed = DBL_MAX;
     double fastestSpeed = 0.0;
     
-    // make array of all speeds
     for (int i = 1; i < locations.count; i++) {
-        firstLoc = [locations objectAtIndex:(i-1)];
-        secondLoc = [locations objectAtIndex:i];
+        Location *firstLoc = [locations objectAtIndex:(i-1)];
+        Location *secondLoc = [locations objectAtIndex:i];
         
-        firstLocCL = [[CLLocation alloc] initWithLatitude:firstLoc.latitude.doubleValue longitude:firstLoc.longitude.doubleValue];
-        secondLocCL = [[CLLocation alloc] initWithLatitude:secondLoc.latitude.doubleValue longitude:secondLoc.longitude.doubleValue];
+        CLLocation *firstLocCL = [[CLLocation alloc] initWithLatitude:firstLoc.latitude.doubleValue longitude:firstLoc.longitude.doubleValue];
+        CLLocation *secondLocCL = [[CLLocation alloc] initWithLatitude:secondLoc.latitude.doubleValue longitude:secondLoc.longitude.doubleValue];
         
         double distance = [secondLocCL distanceFromLocation:firstLocCL];
         double time = [secondLoc.timestamp timeIntervalSinceDate:firstLoc.timestamp];
@@ -144,10 +136,45 @@ static float const metersInMile = 1609.344;
         [speeds addObject:[NSNumber numberWithDouble:speed]];
     }
     
+    // now knowing the slowest+fastest, assign a color to each
+    double middleSpeed = (slowestSpeed + fastestSpeed)/2;
     
+    // RGB for red (slowest)
+    CGFloat r_red = 1.0f;
+    CGFloat r_green = 20/255.0f;
+    CGFloat r_blue = 44/255.0f;
     
+    // RGB for yellow (middle)
+    CGFloat y_red = 1.0f;
+    CGFloat y_green = 215/255.0f;
+    CGFloat y_blue = 0.0f;
+
+    // RGB for green (fastest)
+    CGFloat g_red = 0.0f;
+    CGFloat g_green = 146/255.0f;
+    CGFloat g_blue = 78/255.0f;
     
     NSMutableArray *colors = [NSMutableArray array];
+    
+    for (NSNumber *speed in speeds) {
+        
+        // between red and yellow
+        if (speed.doubleValue < middleSpeed) {
+            double ratio = (speed.doubleValue - slowestSpeed) / (middleSpeed - slowestSpeed);
+            CGFloat red = ratio * (y_red - r_red);
+            CGFloat green = ratio * (y_green - r_green);
+            CGFloat blue = ratio * (y_blue - r_blue);
+            [colors addObject:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f]];
+            
+        // between yellow and green
+        } else {
+            double ratio = (speed.doubleValue - middleSpeed) / (fastestSpeed - middleSpeed);
+            CGFloat red = ratio * (g_red - y_red);
+            CGFloat green = ratio * (g_green - y_green);
+            CGFloat blue = ratio * (g_blue - y_blue);
+            [colors addObject:[UIColor colorWithRed:red green:green blue:blue alpha:1.0f]];
+        }
+    }
     
     return colors;
 }
