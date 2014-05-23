@@ -71,6 +71,7 @@ static float const mapPadding = 1.1f;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    [self loadMap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,7 +80,7 @@ static float const mapPadding = 1.1f;
     // Dispose of any resources that can be recreated.
 }
 
-- (void) reloadMap  {
+- (void) loadMap  {
     
     if (self.run.locations.count > 0) {
         
@@ -88,9 +89,10 @@ static float const mapPadding = 1.1f;
         // set the map bounds
         [self.mapView setRegion:[self mapRegion]];
         
-        // make the line on the map
-        [self.mapView addOverlay:[self polyLine]];
-        
+        // TODO: make the line(s!) on the map
+//        for (Location *location in self.run.locations) {
+//            [self.mapView addOverlay:[self polyLine]];
+//        }
     } else {
         
         // no locations were found!
