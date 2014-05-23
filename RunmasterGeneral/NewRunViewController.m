@@ -13,6 +13,8 @@
 #import "Run.h"
 #import "Location.h"
 #import "RunDetailsViewController.h"
+#import "BadgeController.h"
+#import "Badge.h"
 
 static NSString * const detailSegueName = @"ShowDetails";
 
@@ -25,6 +27,7 @@ static NSString * const detailSegueName = @"ShowDetails";
 @property (nonatomic, strong) NSMutableArray *locations;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) Run *run;
+@property (nonatomic, strong) NSString *upcomingBadgeName;
 
 @property (nonatomic, weak) IBOutlet UILabel *promptLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeTitleLabel;
@@ -33,6 +36,8 @@ static NSString * const detailSegueName = @"ShowDetails";
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *distLabel;
 @property (nonatomic, weak) IBOutlet UILabel *speedLabel;
+@property (nonatomic, weak) IBOutlet UILabel *nextBadgeLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *nextBadgeImageView;
 @property (nonatomic, weak) IBOutlet UIButton *startButton;
 @property (nonatomic, weak) IBOutlet UIButton *stopButton;
 @property (nonatomic, weak) IBOutlet UIButton *soundButton;
@@ -146,11 +151,6 @@ static NSString * const detailSegueName = @"ShowDetails";
     }
 }
 
-
-
-
-
-
 - (void)saveRun
 {
     Run *newRun = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
@@ -188,36 +188,31 @@ static NSString * const detailSegueName = @"ShowDetails";
 - (void)updateLabels
 {
     self.timeLabel.text = [MathController stringifySecondCount:self.seconds usingLongFormat:NO];
-        
     self.distLabel.text = [MathController stringifyDistance:self.distance];
-    
     self.speedLabel.text = [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds];
 }
 
 - (void) maybePlaySound
 {
-    // TODO: checkpoint logic
-    BOOL justPassedCheckpoint = NO;
+    Badge *nextBadge = [[BadgeController defaultController] nextBadgeForDistance:self.distance];
     
-    if (justPassedCheckpoint && self.soundsOn) {
+    if (self.upcomingBadgeName
+        && ![nextBadge.name isEqualToString:self.upcomingBadgeName]) {
+        
         [self playSuccessSound];
     }
+    
+    self.upcomingBadgeName = nextBadge.name;
+    self.nextBadgeLabel.text = [NSString stringWithFormat:@"Next Stop: %@!", nextBadge.name];
+    self.nextBadgeImageView.image = [UIImage imageNamed:nextBadge.imageName];
 }
 
 - (void)playSuccessSound
 {
-    //Get the filename of the sound file:
     NSString *path = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/genericsuccess.wav"];
-    
-    //declare a system sound
     SystemSoundID soundID;
-    
-    //Get a URL for the sound file
     NSURL *filePath = [NSURL fileURLWithPath:path isDirectory:NO];
-    
-    //Use audio sevices to create the sound
     AudioServicesCreateSystemSoundID((CFURLRef)CFBridgingRetain(filePath), &soundID);
-    //Use audio services to play the sound
     AudioServicesPlaySystemSound(soundID);
     
     //also vibrate

@@ -8,12 +8,35 @@
 
 #import "BadgeDetailsViewController.h"
 #import "BadgeEarnStatus.h"
+#import "Badge.h"
 
 @interface BadgeDetailsViewController ()
+
+@property (nonatomic, weak) IBOutlet UIImageView *badgeImageView;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *distanceLabel;
+@property (nonatomic, weak) IBOutlet UILabel *earnedLabel;
+@property (nonatomic, weak) IBOutlet UILabel *silverLabel;
+@property (nonatomic, weak) IBOutlet UILabel *goldLabel;
+@property (nonatomic, weak) IBOutlet UILabel *bestLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *silverImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *goldImageView;
 
 @end
 
 @implementation BadgeDetailsViewController
+
+#pragma mark - IBActions
+
+- (IBAction)infoButtonPressed:(UIButton *)sender {
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:self.earnStatus.badge.name
+                              message:self.earnStatus.badge.desc
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+    [alertView show];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,16 +58,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
