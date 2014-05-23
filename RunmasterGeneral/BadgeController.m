@@ -11,8 +11,8 @@
 #import "Run.h"
 #import "BadgeEarnStatus.h"
 
-static float const silverMultiplier = 1.05;
-static float const goldMultiplier = 1.10;
+float const silverMultiplier = 1.05;
+float const goldMultiplier = 1.10;
 
 @interface BadgeController ()
 
@@ -53,7 +53,7 @@ static float const goldMultiplier = 1.10;
 + (Badge *)badgeForDictionary:(NSDictionary *)dictionary {
     Badge *badge = [Badge new];
     badge.name = [dictionary objectForKey:@"name"];
-    badge.desc = [dictionary objectForKey:@"desc"];
+    badge.badgeDescription = [dictionary objectForKey:@"desc"];
     badge.imageName = [dictionary objectForKey:@"imageName"];
     badge.distance = [[dictionary objectForKey:@"distance"] floatValue];
     return badge;

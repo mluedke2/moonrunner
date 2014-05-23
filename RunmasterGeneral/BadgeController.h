@@ -10,6 +10,9 @@
 
 @class Badge;
 
+extern float const silverMultiplier;
+extern float const goldMultiplier;
+
 @interface BadgeController : NSObject
 
 + (BadgeController *)defaultController;

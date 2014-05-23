@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *imageName;
-@property (strong, nonatomic) NSString *desc;
+@property (strong, nonatomic) NSString *badgeDescription;
 @property float distance;
 
 @end
