@@ -36,6 +36,34 @@
 		FAB9AA2F192DD01300FF8E47 /* BadgeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA2E192DD01300FF8E47 /* BadgeDetailsViewController.m */; };
 		FAB9AA32192DD64F00FF8E47 /* BadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */; };
 		FAB9AA35192DD92300FF8E47 /* BadgesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA34192DD92300FF8E47 /* BadgesTableViewController.m */; };
+		FAE22DA11931A1E900F362F7 /* ariel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D851931A1E900F362F7 /* ariel.jpg */; };
+		FAE22DA31931A1E900F362F7 /* atmosphere.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D871931A1E900F362F7 /* atmosphere.jpg */; };
+		FAE22DA41931A1E900F362F7 /* callisto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D881931A1E900F362F7 /* callisto.jpg */; };
+		FAE22DA51931A1E900F362F7 /* ceres.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D891931A1E900F362F7 /* ceres.jpg */; };
+		FAE22DA61931A1E900F362F7 /* deimos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D8A1931A1E900F362F7 /* deimos.jpg */; };
+		FAE22DA71931A1E900F362F7 /* dione.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D8B1931A1E900F362F7 /* dione.jpg */; };
+		FAE22DA81931A1E900F362F7 /* enceladus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D8C1931A1E900F362F7 /* enceladus.jpg */; };
+		FAE22DA91931A1E900F362F7 /* europa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D8D1931A1E900F362F7 /* europa.jpg */; };
+		FAE22DAA1931A1E900F362F7 /* ganymede.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D8E1931A1E900F362F7 /* ganymede.jpg */; };
+		FAE22DAB1931A1E900F362F7 /* iapetus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D8F1931A1E900F362F7 /* iapetus.jpg */; };
+		FAE22DAC1931A1E900F362F7 /* interstellar_space.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D901931A1E900F362F7 /* interstellar_space.jpg */; };
+		FAE22DAD1931A1E900F362F7 /* io.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D911931A1E900F362F7 /* io.jpg */; };
+		FAE22DB01931A1E900F362F7 /* mimas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D941931A1E900F362F7 /* mimas.jpg */; };
+		FAE22DB11931A1E900F362F7 /* miranda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D951931A1E900F362F7 /* miranda.jpg */; };
+		FAE22DB21931A1E900F362F7 /* moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D961931A1E900F362F7 /* moon.jpg */; };
+		FAE22DB31931A1E900F362F7 /* oberon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D971931A1E900F362F7 /* oberon.jpg */; };
+		FAE22DB41931A1E900F362F7 /* phobos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D981931A1E900F362F7 /* phobos.jpg */; };
+		FAE22DB51931A1E900F362F7 /* pluto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D991931A1E900F362F7 /* pluto.jpg */; };
+		FAE22DB61931A1E900F362F7 /* rhea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D9A1931A1E900F362F7 /* rhea.jpg */; };
+		FAE22DB71931A1E900F362F7 /* saturn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D9B1931A1E900F362F7 /* saturn.jpg */; };
+		FAE22DB81931A1E900F362F7 /* tethys.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D9C1931A1E900F362F7 /* tethys.jpg */; };
+		FAE22DB91931A1E900F362F7 /* titan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D9D1931A1E900F362F7 /* titan.jpg */; };
+		FAE22DBA1931A1E900F362F7 /* titania.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D9E1931A1E900F362F7 /* titania.jpg */; };
+		FAE22DBB1931A1E900F362F7 /* triton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D9F1931A1E900F362F7 /* triton.jpg */; };
+		FAE22DBC1931A1E900F362F7 /* umbriel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22DA01931A1E900F362F7 /* umbriel.jpg */; };
+		FAE22DC11931A23600F362F7 /* asteroid_belt.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE22DBE1931A23600F362F7 /* asteroid_belt.png */; };
+		FAE22DC21931A23600F362F7 /* kuiper_belt.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE22DBF1931A23600F362F7 /* kuiper_belt.png */; };
+		FAE22DC31931A23600F362F7 /* magnetotail.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE22DC01931A23600F362F7 /* magnetotail.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +122,34 @@
 		FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeCell.m; sourceTree = "<group>"; };
 		FAB9AA33192DD92300FF8E47 /* BadgesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgesTableViewController.h; sourceTree = "<group>"; };
 		FAB9AA34192DD92300FF8E47 /* BadgesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesTableViewController.m; sourceTree = "<group>"; };
+		FAE22D851931A1E900F362F7 /* ariel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ariel.jpg; sourceTree = "<group>"; };
+		FAE22D871931A1E900F362F7 /* atmosphere.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = atmosphere.jpg; sourceTree = "<group>"; };
+		FAE22D881931A1E900F362F7 /* callisto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = callisto.jpg; sourceTree = "<group>"; };
+		FAE22D891931A1E900F362F7 /* ceres.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ceres.jpg; sourceTree = "<group>"; };
+		FAE22D8A1931A1E900F362F7 /* deimos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deimos.jpg; sourceTree = "<group>"; };
+		FAE22D8B1931A1E900F362F7 /* dione.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dione.jpg; sourceTree = "<group>"; };
+		FAE22D8C1931A1E900F362F7 /* enceladus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = enceladus.jpg; sourceTree = "<group>"; };
+		FAE22D8D1931A1E900F362F7 /* europa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = europa.jpg; sourceTree = "<group>"; };
+		FAE22D8E1931A1E900F362F7 /* ganymede.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ganymede.jpg; sourceTree = "<group>"; };
+		FAE22D8F1931A1E900F362F7 /* iapetus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iapetus.jpg; sourceTree = "<group>"; };
+		FAE22D901931A1E900F362F7 /* interstellar_space.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = interstellar_space.jpg; sourceTree = "<group>"; };
+		FAE22D911931A1E900F362F7 /* io.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = io.jpg; sourceTree = "<group>"; };
+		FAE22D941931A1E900F362F7 /* mimas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mimas.jpg; sourceTree = "<group>"; };
+		FAE22D951931A1E900F362F7 /* miranda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = miranda.jpg; sourceTree = "<group>"; };
+		FAE22D961931A1E900F362F7 /* moon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = moon.jpg; sourceTree = "<group>"; };
+		FAE22D971931A1E900F362F7 /* oberon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oberon.jpg; sourceTree = "<group>"; };
+		FAE22D981931A1E900F362F7 /* phobos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = phobos.jpg; sourceTree = "<group>"; };
+		FAE22D991931A1E900F362F7 /* pluto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pluto.jpg; sourceTree = "<group>"; };
+		FAE22D9A1931A1E900F362F7 /* rhea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rhea.jpg; sourceTree = "<group>"; };
+		FAE22D9B1931A1E900F362F7 /* saturn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saturn.jpg; sourceTree = "<group>"; };
+		FAE22D9C1931A1E900F362F7 /* tethys.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tethys.jpg; sourceTree = "<group>"; };
+		FAE22D9D1931A1E900F362F7 /* titan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = titan.jpg; sourceTree = "<group>"; };
+		FAE22D9E1931A1E900F362F7 /* titania.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = titania.jpg; sourceTree = "<group>"; };
+		FAE22D9F1931A1E900F362F7 /* triton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = triton.jpg; sourceTree = "<group>"; };
+		FAE22DA01931A1E900F362F7 /* umbriel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = umbriel.jpg; sourceTree = "<group>"; };
+		FAE22DBE1931A23600F362F7 /* asteroid_belt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid_belt.png; sourceTree = "<group>"; };
+		FAE22DBF1931A23600F362F7 /* kuiper_belt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kuiper_belt.png; sourceTree = "<group>"; };
+		FAE22DC01931A23600F362F7 /* magnetotail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnetotail.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +181,7 @@
 		FA0CFA88192C732700973491 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAE22DBD1931A21D00F362F7 /* badges */,
 				FA0CFA89192C734000973491 /* genericsuccess.wav */,
 				FA1F952A1929CF2600A0179A /* Images.xcassets */,
 			);
@@ -245,6 +302,41 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		FAE22DBD1931A21D00F362F7 /* badges */ = {
+			isa = PBXGroup;
+			children = (
+				FAE22DBE1931A23600F362F7 /* asteroid_belt.png */,
+				FAE22DBF1931A23600F362F7 /* kuiper_belt.png */,
+				FAE22DC01931A23600F362F7 /* magnetotail.png */,
+				FAE22D851931A1E900F362F7 /* ariel.jpg */,
+				FAE22D871931A1E900F362F7 /* atmosphere.jpg */,
+				FAE22D881931A1E900F362F7 /* callisto.jpg */,
+				FAE22D891931A1E900F362F7 /* ceres.jpg */,
+				FAE22D8A1931A1E900F362F7 /* deimos.jpg */,
+				FAE22D8B1931A1E900F362F7 /* dione.jpg */,
+				FAE22D8C1931A1E900F362F7 /* enceladus.jpg */,
+				FAE22D8D1931A1E900F362F7 /* europa.jpg */,
+				FAE22D8E1931A1E900F362F7 /* ganymede.jpg */,
+				FAE22D8F1931A1E900F362F7 /* iapetus.jpg */,
+				FAE22D901931A1E900F362F7 /* interstellar_space.jpg */,
+				FAE22D911931A1E900F362F7 /* io.jpg */,
+				FAE22D941931A1E900F362F7 /* mimas.jpg */,
+				FAE22D951931A1E900F362F7 /* miranda.jpg */,
+				FAE22D961931A1E900F362F7 /* moon.jpg */,
+				FAE22D971931A1E900F362F7 /* oberon.jpg */,
+				FAE22D981931A1E900F362F7 /* phobos.jpg */,
+				FAE22D991931A1E900F362F7 /* pluto.jpg */,
+				FAE22D9A1931A1E900F362F7 /* rhea.jpg */,
+				FAE22D9B1931A1E900F362F7 /* saturn.jpg */,
+				FAE22D9C1931A1E900F362F7 /* tethys.jpg */,
+				FAE22D9D1931A1E900F362F7 /* titan.jpg */,
+				FAE22D9E1931A1E900F362F7 /* titania.jpg */,
+				FAE22D9F1931A1E900F362F7 /* triton.jpg */,
+				FAE22DA01931A1E900F362F7 /* umbriel.jpg */,
+			);
+			name = badges;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,10 +413,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE22DA51931A1E900F362F7 /* ceres.jpg in Resources */,
+				FAE22DB71931A1E900F362F7 /* saturn.jpg in Resources */,
+				FAE22DA11931A1E900F362F7 /* ariel.jpg in Resources */,
+				FAE22DB31931A1E900F362F7 /* oberon.jpg in Resources */,
+				FAE22DBB1931A1E900F362F7 /* triton.jpg in Resources */,
+				FAE22DB61931A1E900F362F7 /* rhea.jpg in Resources */,
+				FAE22DB01931A1E900F362F7 /* mimas.jpg in Resources */,
+				FAE22DA31931A1E900F362F7 /* atmosphere.jpg in Resources */,
 				FA0CFA8A192C734000973491 /* genericsuccess.wav in Resources */,
+				FAE22DBC1931A1E900F362F7 /* umbriel.jpg in Resources */,
 				FA1F952B1929CF2600A0179A /* Images.xcassets in Resources */,
+				FAE22DA91931A1E900F362F7 /* europa.jpg in Resources */,
+				FAE22DB91931A1E900F362F7 /* titan.jpg in Resources */,
 				FA1F95171929CF2600A0179A /* InfoPlist.strings in Resources */,
+				FAE22DC21931A23600F362F7 /* kuiper_belt.png in Resources */,
+				FAE22DA41931A1E900F362F7 /* callisto.jpg in Resources */,
+				FAE22DAC1931A1E900F362F7 /* interstellar_space.jpg in Resources */,
+				FAE22DAA1931A1E900F362F7 /* ganymede.jpg in Resources */,
+				FAE22DBA1931A1E900F362F7 /* titania.jpg in Resources */,
+				FAE22DAD1931A1E900F362F7 /* io.jpg in Resources */,
+				FAE22DC11931A23600F362F7 /* asteroid_belt.png in Resources */,
+				FAE22DA81931A1E900F362F7 /* enceladus.jpg in Resources */,
+				FAE22DB51931A1E900F362F7 /* pluto.jpg in Resources */,
+				FAE22DC31931A23600F362F7 /* magnetotail.png in Resources */,
+				FAE22DAB1931A1E900F362F7 /* iapetus.jpg in Resources */,
+				FAE22DA61931A1E900F362F7 /* deimos.jpg in Resources */,
+				FAE22DB81931A1E900F362F7 /* tethys.jpg in Resources */,
+				FAE22DB21931A1E900F362F7 /* moon.jpg in Resources */,
+				FAE22DB41931A1E900F362F7 /* phobos.jpg in Resources */,
+				FAE22DA71931A1E900F362F7 /* dione.jpg in Resources */,
 				FA1F95201929CF2600A0179A /* Main.storyboard in Resources */,
+				FAE22DB11931A1E900F362F7 /* miranda.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

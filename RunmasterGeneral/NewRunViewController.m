@@ -20,7 +20,6 @@ static NSString * const detailSegueName = @"ShowDetails";
 
 @interface NewRunViewController () <UIActionSheetDelegate, CLLocationManagerDelegate>
 
-@property BOOL soundsOn;
 @property int seconds;
 @property float distance;
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -30,17 +29,14 @@ static NSString * const detailSegueName = @"ShowDetails";
 @property (nonatomic, strong) NSString *upcomingBadgeName;
 
 @property (nonatomic, weak) IBOutlet UILabel *promptLabel;
-@property (nonatomic, weak) IBOutlet UILabel *timeTitleLabel;
-@property (nonatomic, weak) IBOutlet UILabel *distTitleLabel;
-@property (nonatomic, weak) IBOutlet UILabel *speedTitleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *distLabel;
-@property (nonatomic, weak) IBOutlet UILabel *speedLabel;
+@property (nonatomic, weak) IBOutlet UILabel *paceLabel;
 @property (nonatomic, weak) IBOutlet UILabel *nextBadgeLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *progressImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *nextBadgeImageView;
 @property (nonatomic, weak) IBOutlet UIButton *startButton;
 @property (nonatomic, weak) IBOutlet UIButton *stopButton;
-@property (nonatomic, weak) IBOutlet UIButton *soundButton;
 
 @end
 
@@ -69,11 +65,8 @@ static NSString * const detailSegueName = @"ShowDetails";
     
     // show the running UI
     self.timeLabel.hidden = NO;
-    self.timeTitleLabel.hidden = NO;
     self.distLabel.hidden = NO;
-    self.distTitleLabel.hidden = NO;
-    self.speedLabel.hidden = NO;
-    self.speedTitleLabel.hidden = NO;
+    self.paceLabel.hidden = NO;
     self.stopButton.hidden = NO;
     
     self.seconds = 0;
@@ -181,15 +174,35 @@ static NSString * const detailSegueName = @"ShowDetails";
 - (void)eachSecond
 {
     self.seconds++;
+    [self updateProgressImageView];
     [self updateLabels];
     [self maybePlaySound];
 }
 
+- (void)updateProgressImageView {
+    int currentPosition = self.progressImageView.frame.origin.x;
+    CGRect newRect = self.progressImageView.frame;
+    
+    switch (currentPosition) {
+        case 20:
+            newRect.origin.x = 80;
+            break;
+        case 80:
+            newRect.origin.x = 140;
+            break;
+        default:
+            newRect.origin.x = 20;
+            break;
+    }
+    
+    self.progressImageView.frame = newRect;
+}
+
 - (void)updateLabels
 {
-    self.timeLabel.text = [MathController stringifySecondCount:self.seconds usingLongFormat:NO];
-    self.distLabel.text = [MathController stringifyDistance:self.distance];
-    self.speedLabel.text = [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds];
+    self.timeLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:self.seconds usingLongFormat:NO]];
+    self.distLabel.text = [NSString stringWithFormat:@"Distance: %@", [MathController stringifyDistance:self.distance]];
+    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds]];
 }
 
 - (void) maybePlaySound
