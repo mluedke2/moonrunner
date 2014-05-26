@@ -16,7 +16,7 @@
 #import "BadgeController.h"
 #import "Badge.h"
 
-static NSString * const detailSegueName = @"ShowDetails";
+static NSString * const detailSegueName = @"NewRunDetails";
 
 @interface NewRunViewController () <UIActionSheetDelegate, CLLocationManagerDelegate>
 
@@ -74,7 +74,9 @@ static NSString * const detailSegueName = @"ShowDetails";
 
 - (IBAction)stopPressed:(id)sender
 {
-    // TODO: save run
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Save", @"Discard", nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
 }
 
 #pragma mark - Private

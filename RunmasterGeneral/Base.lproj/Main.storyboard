@@ -138,11 +138,12 @@
                         <outlet property="startButton" destination="j9T-f3-Mx1" id="gSL-tH-0a9"/>
                         <outlet property="stopButton" destination="22j-y4-Kbu" id="CjE-U8-O4o"/>
                         <outlet property="timeLabel" destination="Poz-fw-ET9" id="tBE-xP-2PS"/>
+                        <segue destination="Ah7-4n-0Wa" kind="push" identifier="NewRunDetails" id="NtA-Fc-TxQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NqF-a1-EIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459" y="-641"/>
+            <point key="canvasLocation" x="474" y="-645"/>
         </scene>
         <!--Past Runs View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
@@ -253,4 +254,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="NtA-Fc-TxQ"/>
+    </inferredMetricsTieBreakers>
 </document>
