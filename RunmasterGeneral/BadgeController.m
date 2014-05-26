@@ -29,7 +29,8 @@ float const goldMultiplier = 1.10;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         controller = [[BadgeController alloc] init];
-        controller.badges = [self badgeArray];
+        // TODO
+        //controller.badges = [self badgeArray];
     });
     
     return controller;

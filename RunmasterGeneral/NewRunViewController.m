@@ -48,17 +48,6 @@ static NSString * const detailSegueName = @"ShowDetails";
 
 -(IBAction)startPressed:(id)sender
 {
-    if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Location Services Not On!"
-                                  message:@"Please turn on Location Services for this app in Settings."
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
-        return;
-    }
-    
     // hide the start UI
     self.startButton.hidden = YES;
     self.promptLabel.hidden = YES;
@@ -82,7 +71,7 @@ static NSString * const detailSegueName = @"ShowDetails";
 
 - (IBAction)stopPressed:(id)sender
 {
-    // switch UI mode
+    // TODO: save run
 }
 
 #pragma mark - Private
