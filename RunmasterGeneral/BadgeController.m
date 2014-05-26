@@ -29,8 +29,7 @@ float const goldMultiplier = 1.10;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         controller = [[BadgeController alloc] init];
-        // TODO
-        //controller.badges = [self badgeArray];
+        controller.badges = [self badgeArray];
     });
     
     return controller;
@@ -54,7 +53,7 @@ float const goldMultiplier = 1.10;
 + (Badge *)badgeForDictionary:(NSDictionary *)dictionary {
     Badge *badge = [Badge new];
     badge.name = [dictionary objectForKey:@"name"];
-    badge.badgeDescription = [dictionary objectForKey:@"desc"];
+    badge.information = [dictionary objectForKey:@"information"];
     badge.imageName = [dictionary objectForKey:@"imageName"];
     badge.distance = [[dictionary objectForKey:@"distance"] floatValue];
     return badge;

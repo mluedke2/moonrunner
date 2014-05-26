@@ -34,7 +34,7 @@
 - (IBAction)infoButtonPressed:(UIButton *)sender {
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle:self.earnStatus.badge.name
-                              message:self.earnStatus.badge.badgeDescription
+                              message:self.earnStatus.badge.information
                               delegate:nil
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil];

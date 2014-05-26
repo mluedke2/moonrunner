@@ -32,7 +32,7 @@ static float const mapPadding = 1.1f;
     
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle:badge.name
-                              message:badge.badgeDescription
+                              message:badge.information
                               delegate:nil
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil];

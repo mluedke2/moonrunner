@@ -124,6 +124,9 @@ static NSString * const detailSegueName = @"ShowDetails";
     
     if (abs(howRecent) < 10.0 && newLocation.horizontalAccuracy < 50) {
         
+        NSLog(@"newLocation.coordinate.latitude: %f", newLocation.coordinate.latitude);
+        NSLog(@"newLocation.coordinate.longitude: %f", newLocation.coordinate.longitude);
+        
         // update distance
         if (self.locations.count > 0) {
             self.distance += [newLocation distanceFromLocation:self.locations.lastObject];

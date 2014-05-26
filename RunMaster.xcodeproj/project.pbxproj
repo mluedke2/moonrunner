@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FA0CFA8A192C734000973491 /* genericsuccess.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA0CFA89192C734000973491 /* genericsuccess.wav */; };
 		FA0CFA8D192C771900973491 /* MathController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0CFA8C192C771900973491 /* MathController.m */; };
+		FA1E89441932F65E0039A4CD /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA1E89431932F65E0039A4CD /* earth.jpg */; };
+		FA1E89461932F80D0039A4CD /* badges.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA1E89451932F80D0039A4CD /* badges.txt */; };
 		FA1F950B1929CF2600A0179A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950A1929CF2600A0179A /* Foundation.framework */; };
 		FA1F950D1929CF2600A0179A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950C1929CF2600A0179A /* CoreGraphics.framework */; };
 		FA1F950F1929CF2600A0179A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950E1929CF2600A0179A /* UIKit.framework */; };
@@ -80,6 +82,8 @@
 		FA0CFA89192C734000973491 /* genericsuccess.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = genericsuccess.wav; sourceTree = "<group>"; };
 		FA0CFA8B192C771900973491 /* MathController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathController.h; sourceTree = "<group>"; };
 		FA0CFA8C192C771900973491 /* MathController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathController.m; sourceTree = "<group>"; };
+		FA1E89431932F65E0039A4CD /* earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earth.jpg; sourceTree = "<group>"; };
+		FA1E89451932F80D0039A4CD /* badges.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = badges.txt; sourceTree = "<group>"; };
 		FA1F95071929CF2600A0179A /* RunMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1F950A1929CF2600A0179A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA1F950C1929CF2600A0179A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -305,6 +309,7 @@
 		FAE22DBD1931A21D00F362F7 /* badges */ = {
 			isa = PBXGroup;
 			children = (
+				FA1E89451932F80D0039A4CD /* badges.txt */,
 				FAE22DBE1931A23600F362F7 /* asteroid_belt.png */,
 				FAE22DBF1931A23600F362F7 /* kuiper_belt.png */,
 				FAE22DC01931A23600F362F7 /* magnetotail.png */,
@@ -314,6 +319,7 @@
 				FAE22D891931A1E900F362F7 /* ceres.jpg */,
 				FAE22D8A1931A1E900F362F7 /* deimos.jpg */,
 				FAE22D8B1931A1E900F362F7 /* dione.jpg */,
+				FA1E89431932F65E0039A4CD /* earth.jpg */,
 				FAE22D8C1931A1E900F362F7 /* enceladus.jpg */,
 				FAE22D8D1931A1E900F362F7 /* europa.jpg */,
 				FAE22D8E1931A1E900F362F7 /* ganymede.jpg */,
@@ -425,6 +431,7 @@
 				FAE22DBC1931A1E900F362F7 /* umbriel.jpg in Resources */,
 				FA1F952B1929CF2600A0179A /* Images.xcassets in Resources */,
 				FAE22DA91931A1E900F362F7 /* europa.jpg in Resources */,
+				FA1E89441932F65E0039A4CD /* earth.jpg in Resources */,
 				FAE22DB91931A1E900F362F7 /* titan.jpg in Resources */,
 				FA1F95171929CF2600A0179A /* InfoPlist.strings in Resources */,
 				FAE22DC21931A23600F362F7 /* kuiper_belt.png in Resources */,
@@ -440,6 +447,7 @@
 				FAE22DAB1931A1E900F362F7 /* iapetus.jpg in Resources */,
 				FAE22DA61931A1E900F362F7 /* deimos.jpg in Resources */,
 				FAE22DB81931A1E900F362F7 /* tethys.jpg in Resources */,
+				FA1E89461932F80D0039A4CD /* badges.txt in Resources */,
 				FAE22DB21931A1E900F362F7 /* moon.jpg in Resources */,
 				FAE22DB41931A1E900F362F7 /* phobos.jpg in Resources */,
 				FAE22DA71931A1E900F362F7 /* dione.jpg in Resources */,
