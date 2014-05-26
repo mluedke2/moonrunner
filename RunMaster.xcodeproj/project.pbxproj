@@ -11,6 +11,7 @@
 		FA0CFA8D192C771900973491 /* MathController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0CFA8C192C771900973491 /* MathController.m */; };
 		FA1E89441932F65E0039A4CD /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA1E89431932F65E0039A4CD /* earth.jpg */; };
 		FA1E89461932F80D0039A4CD /* badges.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA1E89451932F80D0039A4CD /* badges.txt */; };
+		FA1E89481932FC690039A4CD /* mars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA1E89471932FC690039A4CD /* mars.jpg */; };
 		FA1F950B1929CF2600A0179A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950A1929CF2600A0179A /* Foundation.framework */; };
 		FA1F950D1929CF2600A0179A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950C1929CF2600A0179A /* CoreGraphics.framework */; };
 		FA1F950F1929CF2600A0179A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950E1929CF2600A0179A /* UIKit.framework */; };
@@ -84,6 +85,7 @@
 		FA0CFA8C192C771900973491 /* MathController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathController.m; sourceTree = "<group>"; };
 		FA1E89431932F65E0039A4CD /* earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earth.jpg; sourceTree = "<group>"; };
 		FA1E89451932F80D0039A4CD /* badges.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = badges.txt; sourceTree = "<group>"; };
+		FA1E89471932FC690039A4CD /* mars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mars.jpg; sourceTree = "<group>"; };
 		FA1F95071929CF2600A0179A /* RunMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1F950A1929CF2600A0179A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA1F950C1929CF2600A0179A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -326,6 +328,7 @@
 				FAE22D8F1931A1E900F362F7 /* iapetus.jpg */,
 				FAE22D901931A1E900F362F7 /* interstellar_space.jpg */,
 				FAE22D911931A1E900F362F7 /* io.jpg */,
+				FA1E89471932FC690039A4CD /* mars.jpg */,
 				FAE22D941931A1E900F362F7 /* mimas.jpg */,
 				FAE22D951931A1E900F362F7 /* miranda.jpg */,
 				FAE22D961931A1E900F362F7 /* moon.jpg */,
@@ -445,6 +448,7 @@
 				FAE22DB51931A1E900F362F7 /* pluto.jpg in Resources */,
 				FAE22DC31931A23600F362F7 /* magnetotail.png in Resources */,
 				FAE22DAB1931A1E900F362F7 /* iapetus.jpg in Resources */,
+				FA1E89481932FC690039A4CD /* mars.jpg in Resources */,
 				FAE22DA61931A1E900F362F7 /* deimos.jpg in Resources */,
 				FAE22DB81931A1E900F362F7 /* tethys.jpg in Resources */,
 				FA1E89461932F80D0039A4CD /* badges.txt in Resources */,
