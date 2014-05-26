@@ -57,6 +57,9 @@ static NSString * const detailSegueName = @"ShowDetails";
     self.distLabel.hidden = NO;
     self.paceLabel.hidden = NO;
     self.stopButton.hidden = NO;
+    self.progressImageView.hidden = NO;
+    self.nextBadgeImageView.hidden = NO;
+    self.nextBadgeLabel.hidden = NO;
     
     self.seconds = 0;
     

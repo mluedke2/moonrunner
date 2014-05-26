@@ -83,13 +83,11 @@ static float const metersInMile = 1609.344;
     
     float avgPaceSecMeters = seconds / meters;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     float unitMultiplier;
     NSString *unitName;
     
     // metric
-    if ([defaults boolForKey:@"isMetric"]) {
+    if (isMetric) {
         
         unitName = @"min/km";
         
