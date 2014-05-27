@@ -166,17 +166,17 @@ static float const metersInMile = 1609.344;
         // between red and yellow
         if (speed.doubleValue < middleSpeed) {
             double ratio = (speed.doubleValue - slowestSpeed) / (middleSpeed - slowestSpeed);
-            CGFloat red = ratio * (y_red - r_red);
-            CGFloat green = ratio * (y_green - r_green);
-            CGFloat blue = ratio * (y_blue - r_blue);
+            CGFloat red = r_red + ratio * (y_red - r_red);
+            CGFloat green = r_green + ratio * (y_green - r_green);
+            CGFloat blue = r_blue + ratio * (y_blue - r_blue);
             color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
             
         // between yellow and green
         } else {
             double ratio = (speed.doubleValue - middleSpeed) / (fastestSpeed - middleSpeed);
-            CGFloat red = ratio * (g_red - y_red);
-            CGFloat green = ratio * (g_green - y_green);
-            CGFloat blue = ratio * (g_blue - y_blue);
+            CGFloat red = y_red + ratio * (g_red - y_red);
+            CGFloat green = y_green + ratio * (g_green - y_green);
+            CGFloat blue = y_blue + ratio * (g_blue - y_blue);
             color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
         }
         
@@ -188,22 +188,22 @@ static float const metersInMile = 1609.344;
 
 + (UIColor *)colorForLineBetweenPoint:(CLLocationCoordinate2D)locationA andPoint:(CLLocationCoordinate2D)locationB givenMapArray:(NSArray *)colorCoordMapArray
 {
-    NSUInteger index = [colorCoordMapArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        
+    NSUInteger index = [colorCoordMapArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop)
+    {
         CLLocationCoordinate2D locA = [[obj objectForKey:@"locationA"] coordinate];
         CLLocationCoordinate2D locB = [[obj objectForKey:@"locationB"] coordinate];
         
-        if (locationA.latitude == locA.latitude
-            && locationA.longitude == locA.longitude
-            && locationB.latitude == locB.latitude
-            && locationB.longitude == locB.longitude) {
+        if ([self equalToEighthDecimal:locationA.latitude And:locA.latitude]
+            && [self equalToEighthDecimal:locationA.longitude And:locA.longitude]
+            && [self equalToEighthDecimal:locationB.latitude And:locB.latitude]
+            && [self equalToEighthDecimal:locationB.longitude And:locB.longitude]) {
             
             return YES;
             
-        } else if (locationA.latitude == locB.latitude
-                   && locationA.longitude == locB.longitude
-                   && locationB.latitude == locA.latitude
-                   && locationB.longitude == locA.longitude) {
+        } else if ([self equalToEighthDecimal:locationA.latitude And:locB.latitude]
+                   && [self equalToEighthDecimal:locationA.longitude And:locB.longitude]
+                   && [self equalToEighthDecimal:locationB.latitude And:locA.latitude]
+                   && [self equalToEighthDecimal:locationB.longitude And:locA.longitude]) {
             
             return YES;
         }
@@ -216,6 +216,16 @@ static float const metersInMile = 1609.344;
     }
     
     return [[colorCoordMapArray objectAtIndex:index] objectForKey:@"color"];
+}
+
++ (BOOL)equalToEighthDecimal:(double)valueA And:(double)valueB
+{
+    return [self roundToNearestEighthDecimalPlace:valueA] == [self roundToNearestEighthDecimalPlace:valueB];
+}
+
++ (double)roundToNearestEighthDecimalPlace:(double)original
+{
+    return floorf(original * 100000000 + 0.5) / 100000000;
 }
 
 @end

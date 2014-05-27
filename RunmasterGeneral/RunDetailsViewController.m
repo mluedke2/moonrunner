@@ -55,9 +55,6 @@ static float const mapPadding = 1.1f;
         
         self.locations = [newDetailRun.locations sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES]]];
         self.colorMapArray = [MathController colorsForLocations:self.locations];
-        
-        // Update the view.
-        [self configureView];
     }
 }
 
@@ -78,7 +75,6 @@ static float const mapPadding = 1.1f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
     [self loadMap];
 }
@@ -89,7 +85,7 @@ static float const mapPadding = 1.1f;
     // Dispose of any resources that can be recreated.
 }
 
-- (void) loadMap  {
+- (void)loadMap {
     
     if (self.run.locations.count > 0) {
         
@@ -179,6 +175,8 @@ static float const mapPadding = 1.1f;
         aRenderer.strokeColor = [MathController colorForLineBetweenPoint:MKCoordinateForMapPoint(pointA) andPoint:MKCoordinateForMapPoint(pointB) givenMapArray:self.colorMapArray];
         
         aRenderer.lineWidth = 3;
+        
+        NSLog(@"strokeColor: %@", aRenderer.strokeColor);
         
         return aRenderer;
     }
