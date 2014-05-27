@@ -142,6 +142,8 @@ static NSString * const detailSegueName = @"NewRunDetails";
 {
     Run *newRun = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
     
+    newRun.distance = [NSNumber numberWithFloat:self.distance];
+    newRun.duration = [NSNumber numberWithInt:self.seconds];
     newRun.timestamp = [NSDate date];
     
     NSMutableSet *locationSet = [NSMutableSet set];
