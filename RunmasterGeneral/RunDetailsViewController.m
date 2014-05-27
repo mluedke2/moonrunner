@@ -16,6 +16,7 @@ static float const mapPadding = 1.1f;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, weak) IBOutlet UILabel *distanceLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *paceLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *badgeImageView;
 @property (nonatomic, weak) IBOutlet UIButton *infoButton;
@@ -25,6 +26,12 @@ static float const mapPadding = 1.1f;
 @implementation RunDetailsViewController
 
 #pragma mark - IBActions
+
+-(IBAction)displayModeToggled:(UISwitch *)sender {
+    self.badgeImageView.hidden = !sender.isOn;
+    self.infoButton.hidden = !sender.isOn;
+    self.mapView.hidden = sender.isOn;
+}
 
 -(IBAction)infoButtonPressed:(UIButton *)sender {
     
