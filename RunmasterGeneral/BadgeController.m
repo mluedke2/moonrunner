@@ -60,7 +60,7 @@ float const goldMultiplier = 1.10;
 }
 
 - (NSArray *)earnStatusesForRuns:(NSArray *)runs {
-    NSMutableArray *earnStatuses;
+    NSMutableArray *earnStatuses = [NSMutableArray array];
     
     for (Badge *badge in self.badges) {
         
