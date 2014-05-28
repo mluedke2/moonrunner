@@ -66,7 +66,9 @@ static float const mapPadding = 1.1f;
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     self.dateLabel.text = [formatter stringFromDate:self.run.timestamp];
     
-    self.paceLabel.text = [MathController stringifyAvgPaceFromDist:self.run.distance.floatValue overTime:self.run.duration.intValue];
+    self.timeLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:self.run.duration.intValue usingLongFormat:YES]];
+    
+    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:self.run.distance.floatValue overTime:self.run.duration.intValue]];
     
     Badge *badge = [[BadgeController defaultController] bestBadgeForDistance:self.run.distance.floatValue];
     self.badgeImageView.image = [UIImage imageNamed:badge.imageName];

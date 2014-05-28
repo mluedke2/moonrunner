@@ -460,6 +460,9 @@
                                 </state>
                                 <state key="selected" backgroundImage="info_pressed"/>
                                 <state key="highlighted" backgroundImage="info_pressed"/>
+                                <connections>
+                                    <action selector="infoButtonPressed:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="WeY-gU-AIH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
