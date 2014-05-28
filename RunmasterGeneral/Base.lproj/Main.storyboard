@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="26" y="64"/>
         </scene>
-        <!--New Run View Controller-->
+        <!--New Run View Controller - New Run-->
         <scene sceneID="fGt-mZ-WXf">
             <objects>
                 <viewController id="IT2-8f-7aj" customClass="NewRunViewController" sceneMemberID="viewController">
@@ -147,7 +147,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MJ0-T7-r1w"/>
+                    <navigationItem key="navigationItem" title="New Run" id="MJ0-T7-r1w"/>
                     <connections>
                         <outlet property="distLabel" destination="JHx-qI-3px" id="9eY-YH-4sI"/>
                         <outlet property="nextBadgeImageView" destination="hkN-dO-xP5" id="Ojx-rQ-c7G"/>
@@ -224,7 +224,7 @@
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--Badges Table View Controller-->
+        <!--Badges Table View Controller - Badges-->
         <scene sceneID="UBJ-vF-09Z">
             <objects>
                 <tableViewController id="CGm-zh-iTG" customClass="BadgesTableViewController" sceneMemberID="viewController">
@@ -285,7 +285,7 @@
                             <outlet property="delegate" destination="CGm-zh-iTG" id="sWK-o8-gxb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4WB-Dj-u0v"/>
+                    <navigationItem key="navigationItem" title="Badges" id="4WB-Dj-u0v"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzP-1J-oxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -467,7 +467,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <navigationItem key="navigationItem" title="Run" id="uoN-sX-iAF"/>
                     <connections>
                         <outlet property="badgeImageView" destination="nW7-e9-7A1" id="Xja-z6-3vd"/>
                         <outlet property="dateLabel" destination="Etg-7D-Zd7" id="aWF-W2-Emf"/>
@@ -490,6 +490,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aKh-WG-6gr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -518,6 +523,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jUr-3t-vfg"/>
+        <segue reference="NtA-Fc-TxQ"/>
     </inferredMetricsTieBreakers>
 </document>
