@@ -44,6 +44,29 @@ static NSString * const detailSegueName = @"NewRunDetails";
 
 #pragma mark - Lifecycle
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.startButton.hidden = NO;
+    self.promptLabel.hidden = NO;
+    
+    self.timeLabel.text = @"";
+    self.timeLabel.hidden = YES;
+    self.distLabel.hidden = YES;
+    self.paceLabel.hidden = YES;
+    self.nextBadgeLabel.hidden = YES;
+    self.stopButton.hidden = YES;
+    self.nextBadgeImageView.hidden = YES;
+    self.progressImageView.hidden = YES;
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.timer invalidate];
+}
+
 #pragma mark - IBActions
 
 -(IBAction)startPressed:(id)sender
