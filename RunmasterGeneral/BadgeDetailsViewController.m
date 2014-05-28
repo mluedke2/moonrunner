@@ -29,26 +29,7 @@
 
 @implementation BadgeDetailsViewController
 
-#pragma mark - IBActions
-
-- (IBAction)infoButtonPressed:(UIButton *)sender {
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:self.earnStatus.badge.name
-                              message:self.earnStatus.badge.information
-                              delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-    [alertView show];
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad
 {
@@ -87,10 +68,16 @@
     self.bestLabel.text = [NSString stringWithFormat:@"Best: %@, %@", [MathController stringifyAvgPaceFromDist:self.earnStatus.bestRun.distance.floatValue overTime:self.earnStatus.bestRun.duration.intValue], [formatter stringFromDate:self.earnStatus.bestRun.timestamp]];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - IBActions
+
+- (IBAction)infoButtonPressed:(UIButton *)sender {
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:self.earnStatus.badge.name
+                              message:self.earnStatus.badge.information
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+    [alertView show];
 }
 
 @end

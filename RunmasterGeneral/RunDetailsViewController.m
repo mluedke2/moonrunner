@@ -25,16 +25,26 @@ static float const mapPadding = 1.1f;
 
 @implementation RunDetailsViewController
 
+#pragma mark - Lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self configureView];
+    [self loadMap];
+}
+
 #pragma mark - IBActions
 
--(IBAction)displayModeToggled:(UISwitch *)sender {
+-(IBAction)displayModeToggled:(UISwitch *)sender
+{
     self.badgeImageView.hidden = !sender.isOn;
     self.infoButton.hidden = !sender.isOn;
     self.mapView.hidden = sender.isOn;
 }
 
--(IBAction)infoButtonPressed:(UIButton *)sender {
-    
+-(IBAction)infoButtonPressed:(UIButton *)sender
+{
     Badge *badge = [[BadgeController defaultController] bestBadgeForDistance:self.run.distance.floatValue];
     
     UIAlertView *alertView = [[UIAlertView alloc]
@@ -46,17 +56,7 @@ static float const mapPadding = 1.1f;
     [alertView show];
 }
 
-#pragma mark - Managing the detail item
-
-- (void)setRun:(Run *)newDetailRun
-{
-    if (_run != newDetailRun) {
-        _run = newDetailRun;
-        
-        self.locations = [newDetailRun.locations sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES]]];
-        self.colorMapArray = [MathController colorsForLocations:self.locations];
-    }
-}
+#pragma mark - Private
 
 - (void)configureView
 {
@@ -74,21 +74,8 @@ static float const mapPadding = 1.1f;
     self.badgeImageView.image = [UIImage imageNamed:badge.imageName];
 }
 
-- (void)viewDidLoad
+- (void)loadMap
 {
-    [super viewDidLoad];
-    [self configureView];
-    [self loadMap];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)loadMap {
-    
     if (self.run.locations.count > 0) {
         
         self.mapView.hidden = NO;
@@ -115,10 +102,22 @@ static float const mapPadding = 1.1f;
     }
 }
 
+#pragma mark - Public
+
+- (void)setRun:(Run *)newDetailRun
+{
+    if (_run != newDetailRun) {
+        _run = newDetailRun;
+        
+        self.locations = [newDetailRun.locations sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES]]];
+        self.colorMapArray = [MathController colorsForLocations:self.locations];
+    }
+}
+
 #pragma mark - MKMapViewDelegate
 
-- (MKCoordinateRegion)mapRegion {
-    
+- (MKCoordinateRegion)mapRegion
+{
     MKCoordinateRegion region;
     Location *initialLoc = self.locations.firstObject;
     
@@ -151,8 +150,8 @@ static float const mapPadding = 1.1f;
     return [self.mapView regionThatFits:region];
 }
 
-- (MKPolyline *)polyLineForLocation:(Location *)locationA andLocation:(Location *)locationB {
-    
+- (MKPolyline *)polyLineForLocation:(Location *)locationA andLocation:(Location *)locationB
+{
     CLLocationCoordinate2D coords[2];
     
     coords[0] = CLLocationCoordinate2DMake(locationA.latitude.doubleValue, locationA.longitude.doubleValue);
@@ -161,8 +160,8 @@ static float const mapPadding = 1.1f;
     return [MKPolyline polylineWithCoordinates:coords count:2];
 }
 
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay {
-    
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
+{
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolyline *polyLine = (MKPolyline *)overlay;
         
@@ -177,8 +176,6 @@ static float const mapPadding = 1.1f;
         aRenderer.strokeColor = [MathController colorForLineBetweenPoint:MKCoordinateForMapPoint(pointA) andPoint:MKCoordinateForMapPoint(pointB) givenMapArray:self.colorMapArray];
         
         aRenderer.lineWidth = 3;
-        
-        NSLog(@"strokeColor: %@", aRenderer.strokeColor);
         
         return aRenderer;
     }

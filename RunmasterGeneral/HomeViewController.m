@@ -20,14 +20,7 @@
 
 @implementation HomeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad
 {
@@ -42,12 +35,6 @@
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
 
     self.runArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Navigation

@@ -104,63 +104,6 @@ static NSString * const detailSegueName = @"NewRunDetails";
 
 #pragma mark - Private
 
-- (void)startLocationUpdates
-{
-    // Create the location manager if this object does not
-    // already have one.
-    if (self.locationManager == nil) {
-        self.locationManager = [[CLLocationManager alloc] init];
-    }
-    
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    self.locationManager.activityType = CLActivityTypeFitness;
-    
-    // Movement threshold for new events.
-    self.locationManager.distanceFilter = 10; // meters
-    
-    [self.locationManager startUpdatingLocation];
-}
-
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    [self.locationManager stopUpdatingLocation];
-    
-    // save
-    if (buttonIndex == 0) {
-        [self saveRun];
-        [self performSegueWithIdentifier:detailSegueName sender:nil];
-        
-    // discard
-    } else if (buttonIndex == 1) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    }
-}
-
-#pragma mark - CLLocationManagerDelegate
-
-- (void)locationManager:(CLLocationManager *)manager
-     didUpdateLocations:(NSArray *)locations
-{
-    CLLocation *newLocation = [locations lastObject];
-    
-    NSDate *eventDate = newLocation.timestamp;
-    
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    
-    if (abs(howRecent) < 10.0 && newLocation.horizontalAccuracy < 50) {
-        
-        // update distance
-        if (self.locations.count > 0) {
-            self.distance += [newLocation distanceFromLocation:self.locations.lastObject];
-        }
-        
-        [self.locations addObject:newLocation];
-    }
-}
-
 - (void)saveRun
 {
     Run *newRun = [NSEntityDescription insertNewObjectForEntityForName:@"Run" inManagedObjectContext:self.managedObjectContext];
@@ -198,7 +141,8 @@ static NSString * const detailSegueName = @"NewRunDetails";
     [self updateLabels];
 }
 
-- (void)updateProgressImageView {
+- (void)updateProgressImageView
+{
     int currentPosition = self.progressImageView.frame.origin.x;
     CGRect newRect = self.progressImageView.frame;
     
@@ -251,26 +195,64 @@ static NSString * const detailSegueName = @"NewRunDetails";
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)startLocationUpdates
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    // Create the location manager if this object does not
+    // already have one.
+    if (self.locationManager == nil) {
+        self.locationManager = [[CLLocationManager alloc] init];
     }
-    return self;
+    
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.activityType = CLActivityTypeFitness;
+    
+    // Movement threshold for new events.
+    self.locationManager.distanceFilter = 10; // meters
+    
+    [self.locationManager startUpdatingLocation];
 }
 
-- (void)viewDidLoad
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.locationManager stopUpdatingLocation];
+    
+    // save
+    if (buttonIndex == 0) {
+        [self saveRun];
+        [self performSegueWithIdentifier:detailSegueName sender:nil];
+        
+    // discard
+    } else if (buttonIndex == 1) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    CLLocation *newLocation = [locations lastObject];
+    
+    NSDate *eventDate = newLocation.timestamp;
+    
+    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+    
+    if (abs(howRecent) < 10.0 && newLocation.horizontalAccuracy < 50) {
+        
+        // update distance
+        if (self.locations.count > 0) {
+            self.distance += [newLocation distanceFromLocation:self.locations.lastObject];
+        }
+        
+        [self.locations addObject:newLocation];
+    }
 }
+
+#pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
