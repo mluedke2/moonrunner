@@ -26,7 +26,7 @@ static NSString * const detailSegueName = @"NewRunDetails";
 @property (nonatomic, strong) NSMutableArray *locations;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) Run *run;
-@property (nonatomic, strong) NSString *upcomingBadgeName;
+@property (nonatomic, strong) Badge *upcomingBadge;
 
 @property (nonatomic, weak) IBOutlet UILabel *promptLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
@@ -171,8 +171,8 @@ static NSString * const detailSegueName = @"NewRunDetails";
 {
     self.seconds++;
     [self updateProgressImageView];
-    [self updateLabels];
     [self maybePlaySound];
+    [self updateLabels];
 }
 
 - (void)updateProgressImageView {
@@ -199,20 +199,20 @@ static NSString * const detailSegueName = @"NewRunDetails";
     self.timeLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:self.seconds usingLongFormat:NO]];
     self.distLabel.text = [NSString stringWithFormat:@"Distance: %@", [MathController stringifyDistance:self.distance]];
     self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds]];
+    self.nextBadgeLabel.text = [NSString stringWithFormat:@"%@ until %@!", [MathController stringifyDistance:(self.upcomingBadge.distance - self.distance)], self.upcomingBadge.name];
 }
 
 - (void) maybePlaySound
 {
     Badge *nextBadge = [[BadgeController defaultController] nextBadgeForDistance:self.distance];
     
-    if (self.upcomingBadgeName
-        && ![nextBadge.name isEqualToString:self.upcomingBadgeName]) {
+    if (self.upcomingBadge
+        && ![nextBadge.name isEqualToString:self.upcomingBadge.name]) {
         
         [self playSuccessSound];
     }
     
-    self.upcomingBadgeName = nextBadge.name;
-    self.nextBadgeLabel.text = [NSString stringWithFormat:@"Next Stop: %@!", nextBadge.name];
+    self.upcomingBadge = nextBadge;
     self.nextBadgeImageView.image = [UIImage imageNamed:nextBadge.imageName];
 }
 
