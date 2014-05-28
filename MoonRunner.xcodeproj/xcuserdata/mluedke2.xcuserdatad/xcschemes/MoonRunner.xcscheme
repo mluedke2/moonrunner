@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA1F95061929CF2600A0179A"
                BuildableName = "RunMaster.app"
-               BlueprintName = "RunMaster"
-               ReferencedContainer = "container:RunMaster.xcodeproj">
+               BlueprintName = "MoonRunner"
+               ReferencedContainer = "container:MoonRunner.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA1F952F1929CF2600A0179A"
                BuildableName = "RunMasterTests.xctest"
-               BlueprintName = "RunMasterTests"
-               ReferencedContainer = "container:RunMaster.xcodeproj">
+               BlueprintName = "MoonRunnerTests"
+               ReferencedContainer = "container:MoonRunner.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA1F95061929CF2600A0179A"
             BuildableName = "RunMaster.app"
-            BlueprintName = "RunMaster"
-            ReferencedContainer = "container:RunMaster.xcodeproj">
+            BlueprintName = "MoonRunner"
+            ReferencedContainer = "container:MoonRunner.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA1F95061929CF2600A0179A"
             BuildableName = "RunMaster.app"
-            BlueprintName = "RunMaster"
-            ReferencedContainer = "container:RunMaster.xcodeproj">
+            BlueprintName = "MoonRunner"
+            ReferencedContainer = "container:MoonRunner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -87,8 +87,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA1F95061929CF2600A0179A"
             BuildableName = "RunMaster.app"
-            BlueprintName = "RunMaster"
-            ReferencedContainer = "container:RunMaster.xcodeproj">
+            BlueprintName = "MoonRunner"
+            ReferencedContainer = "container:MoonRunner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

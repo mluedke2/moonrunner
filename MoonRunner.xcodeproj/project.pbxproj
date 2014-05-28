@@ -86,15 +86,15 @@
 		FA1E89431932F65E0039A4CD /* earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earth.jpg; sourceTree = "<group>"; };
 		FA1E89451932F80D0039A4CD /* badges.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = badges.txt; sourceTree = "<group>"; };
 		FA1E89471932FC690039A4CD /* mars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mars.jpg; sourceTree = "<group>"; };
-		FA1F95071929CF2600A0179A /* RunMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1F95071929CF2600A0179A /* MoonRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoonRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1F950A1929CF2600A0179A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA1F950C1929CF2600A0179A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FA1F950E1929CF2600A0179A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA1F95101929CF2600A0179A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		FA1F95141929CF2600A0179A /* RunMaster-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RunMaster-Info.plist"; sourceTree = "<group>"; };
+		FA1F95141929CF2600A0179A /* MoonRunner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoonRunner-Info.plist"; sourceTree = "<group>"; };
 		FA1F95161929CF2600A0179A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA1F95181929CF2600A0179A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA1F951A1929CF2600A0179A /* RunMaster-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunMaster-Prefix.pch"; sourceTree = "<group>"; };
+		FA1F951A1929CF2600A0179A /* MoonRunner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoonRunner-Prefix.pch"; sourceTree = "<group>"; };
 		FA1F951B1929CF2600A0179A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA1F951C1929CF2600A0179A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FA1F951F1929CF2600A0179A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		FA1F95271929CF2600A0179A /* RunDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunDetailsViewController.h; sourceTree = "<group>"; };
 		FA1F95281929CF2600A0179A /* RunDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunDetailsViewController.m; sourceTree = "<group>"; };
 		FA1F952A1929CF2600A0179A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FA1F95301929CF2600A0179A /* RunMasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunMasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1F95301929CF2600A0179A /* MoonRunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonRunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1F95311929CF2600A0179A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FA1F95481929E36E00A0179A /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
 		FA1F95491929E36E00A0179A /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		FA1F94FE1929CF2600A0179A = {
 			isa = PBXGroup;
 			children = (
-				FA1F95121929CF2600A0179A /* RunmasterGeneral */,
+				FA1F95121929CF2600A0179A /* MoonRunner */,
 				FA1F95091929CF2600A0179A /* Frameworks */,
 				FA1F95081929CF2600A0179A /* Products */,
 			);
@@ -206,8 +206,8 @@
 		FA1F95081929CF2600A0179A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA1F95071929CF2600A0179A /* RunMaster.app */,
-				FA1F95301929CF2600A0179A /* RunMasterTests.xctest */,
+				FA1F95071929CF2600A0179A /* MoonRunner.app */,
+				FA1F95301929CF2600A0179A /* MoonRunnerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,7 +224,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FA1F95121929CF2600A0179A /* RunmasterGeneral */ = {
+		FA1F95121929CF2600A0179A /* MoonRunner */ = {
 			isa = PBXGroup;
 			children = (
 				FA0CFA88192C732700973491 /* Resources */,
@@ -233,16 +233,16 @@
 				FA30BD0C192B17DC00CD453E /* Model */,
 				FA1F95131929CF2600A0179A /* Supporting Files */,
 			);
-			path = RunmasterGeneral;
+			path = MoonRunner;
 			sourceTree = "<group>";
 		};
 		FA1F95131929CF2600A0179A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FA1F95141929CF2600A0179A /* RunMaster-Info.plist */,
+				FA1F95141929CF2600A0179A /* MoonRunner-Info.plist */,
 				FA1F95151929CF2600A0179A /* InfoPlist.strings */,
 				FA1F95181929CF2600A0179A /* main.m */,
-				FA1F951A1929CF2600A0179A /* RunMaster-Prefix.pch */,
+				FA1F951A1929CF2600A0179A /* MoonRunner-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -349,9 +349,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA1F95061929CF2600A0179A /* RunMaster */ = {
+		FA1F95061929CF2600A0179A /* MoonRunner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA1F95421929CF2600A0179A /* Build configuration list for PBXNativeTarget "RunMaster" */;
+			buildConfigurationList = FA1F95421929CF2600A0179A /* Build configuration list for PBXNativeTarget "MoonRunner" */;
 			buildPhases = (
 				FA1F95031929CF2600A0179A /* Sources */,
 				FA1F95041929CF2600A0179A /* Frameworks */,
@@ -361,14 +361,14 @@
 			);
 			dependencies = (
 			);
-			name = RunMaster;
+			name = MoonRunner;
 			productName = RunmasterGeneral;
-			productReference = FA1F95071929CF2600A0179A /* RunMaster.app */;
+			productReference = FA1F95071929CF2600A0179A /* MoonRunner.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FA1F952F1929CF2600A0179A /* RunMasterTests */ = {
+		FA1F952F1929CF2600A0179A /* MoonRunnerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA1F95451929CF2600A0179A /* Build configuration list for PBXNativeTarget "RunMasterTests" */;
+			buildConfigurationList = FA1F95451929CF2600A0179A /* Build configuration list for PBXNativeTarget "MoonRunnerTests" */;
 			buildPhases = (
 				FA1F952C1929CF2600A0179A /* Sources */,
 				FA1F952D1929CF2600A0179A /* Frameworks */,
@@ -379,9 +379,9 @@
 			dependencies = (
 				FA1F95371929CF2600A0179A /* PBXTargetDependency */,
 			);
-			name = RunMasterTests;
+			name = MoonRunnerTests;
 			productName = RunmasterGeneralTests;
-			productReference = FA1F95301929CF2600A0179A /* RunMasterTests.xctest */;
+			productReference = FA1F95301929CF2600A0179A /* MoonRunnerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -398,7 +398,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FA1F95021929CF2600A0179A /* Build configuration list for PBXProject "RunMaster" */;
+			buildConfigurationList = FA1F95021929CF2600A0179A /* Build configuration list for PBXProject "MoonRunner" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -411,8 +411,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA1F95061929CF2600A0179A /* RunMaster */,
-				FA1F952F1929CF2600A0179A /* RunMasterTests */,
+				FA1F95061929CF2600A0179A /* MoonRunner */,
+				FA1F952F1929CF2600A0179A /* MoonRunnerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -506,7 +506,7 @@
 /* Begin PBXTargetDependency section */
 		FA1F95371929CF2600A0179A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA1F95061929CF2600A0179A /* RunMaster */;
+			target = FA1F95061929CF2600A0179A /* MoonRunner */;
 			targetProxy = FA1F95361929CF2600A0179A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -607,10 +607,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RunmasterGeneral/RunMaster-Prefix.pch";
+				GCC_PREFIX_HEADER = "MoonRunner/MoonRunner-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "RunmasterGeneral/RunMaster-Info.plist";
-				PRODUCT_NAME = RunMaster;
+				INFOPLIST_FILE = "MoonRunner/MoonRunner-Info.plist";
+				PRODUCT_NAME = MoonRunner;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -621,10 +621,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RunmasterGeneral/RunMaster-Prefix.pch";
+				GCC_PREFIX_HEADER = "MoonRunner/MoonRunner-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "RunmasterGeneral/RunMaster-Info.plist";
-				PRODUCT_NAME = RunMaster;
+				INFOPLIST_FILE = "MoonRunner/MoonRunner-Info.plist";
+				PRODUCT_NAME = MoonRunner;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -645,7 +645,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "RunmasterGeneralTests/RunMasterTests-Info.plist";
-				PRODUCT_NAME = RunMasterTests;
+				PRODUCT_NAME = MoonRunnerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -663,7 +663,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RunmasterGeneral/RunmasterGeneral-Prefix.pch";
 				INFOPLIST_FILE = "RunmasterGeneralTests/RunMasterTests-Info.plist";
-				PRODUCT_NAME = RunMasterTests;
+				PRODUCT_NAME = MoonRunnerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -672,7 +672,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA1F95021929CF2600A0179A /* Build configuration list for PBXProject "RunMaster" */ = {
+		FA1F95021929CF2600A0179A /* Build configuration list for PBXProject "MoonRunner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA1F95401929CF2600A0179A /* Debug */,
@@ -681,7 +681,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA1F95421929CF2600A0179A /* Build configuration list for PBXNativeTarget "RunMaster" */ = {
+		FA1F95421929CF2600A0179A /* Build configuration list for PBXNativeTarget "MoonRunner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA1F95431929CF2600A0179A /* Debug */,
@@ -690,7 +690,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA1F95451929CF2600A0179A /* Build configuration list for PBXNativeTarget "RunMasterTests" */ = {
+		FA1F95451929CF2600A0179A /* Build configuration list for PBXNativeTarget "MoonRunnerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA1F95461929CF2600A0179A /* Debug */,
