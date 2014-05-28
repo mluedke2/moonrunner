@@ -191,7 +191,7 @@
 				FA0CFA89192C734000973491 /* genericsuccess.wav */,
 				FA1F952A1929CF2600A0179A /* Images.xcassets */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FA1F94FE1929CF2600A0179A = {
@@ -260,7 +260,7 @@
 				FA70BB05192E8784004C1956 /* BadgeEarnStatus.h */,
 				FA70BB06192E8784004C1956 /* BadgeEarnStatus.m */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FA30BD0D192B17EC00CD453E /* View */ = {
@@ -272,7 +272,7 @@
 				FAB9AA30192DD64F00FF8E47 /* BadgeCell.h */,
 				FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		FA30BD0E192B17F600CD453E /* Controller */ = {
@@ -286,7 +286,7 @@
 				FAB9AA23192DBEB500FF8E47 /* BadgeController.h */,
 				FAB9AA24192DBEB500FF8E47 /* BadgeController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		FAB9AA29192DCFDF00FF8E47 /* ViewController */ = {
@@ -305,7 +305,7 @@
 				FAB9AA2D192DD01300FF8E47 /* BadgeDetailsViewController.h */,
 				FAB9AA2E192DD01300FF8E47 /* BadgeDetailsViewController.m */,
 			);
-			name = ViewController;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		FAE22DBD1931A21D00F362F7 /* badges */ = {
@@ -343,7 +343,7 @@
 				FAE22D9F1931A1E900F362F7 /* triton.jpg */,
 				FAE22DA01931A1E900F362F7 /* umbriel.jpg */,
 			);
-			name = badges;
+			path = badges;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
