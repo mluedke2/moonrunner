@@ -9,7 +9,7 @@
 #import "MathController.h"
 #import "Location.h"
 
-static bool const isMetric = NO;
+static bool const isMetric = YES;
 static float const metersInKM = 1000;
 static float const metersInMile = 1609.344;
 
