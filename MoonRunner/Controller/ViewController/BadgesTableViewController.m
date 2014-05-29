@@ -61,6 +61,7 @@
         cell.silverImageView.hidden = !earnStatus.silverRun;
         cell.goldImageView.transform = self.transform;
         cell.goldImageView.hidden = !earnStatus.goldRun;
+        cell.userInteractionEnabled = YES;
         
     } else {
         cell.nameLabel.textColor = self.redColor;
@@ -68,6 +69,7 @@
         cell.descLabel.textColor = self.redColor;
         cell.descLabel.text = [NSString stringWithFormat:@"Run %@ to Earn", [MathController stringifyDistance:earnStatus.badge.distance]];
         cell.badgeImageView.image = [UIImage imageNamed:@"question_badge.png"];
+        cell.userInteractionEnabled = NO;
     }
     
     return cell;
