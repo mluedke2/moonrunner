@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0B80C01939189600CDCA53 /* MulticolorPolylineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0B80BF1939189600CDCA53 /* MulticolorPolylineSegment.m */; };
 		FA0CFA8A192C734000973491 /* genericsuccess.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA0CFA89192C734000973491 /* genericsuccess.wav */; };
 		FA0CFA8D192C771900973491 /* MathController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0CFA8C192C771900973491 /* MathController.m */; };
 		FA1E89441932F65E0039A4CD /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA1E89431932F65E0039A4CD /* earth.jpg */; };
@@ -80,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA0B80BE1939189600CDCA53 /* MulticolorPolylineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MulticolorPolylineSegment.h; sourceTree = "<group>"; };
+		FA0B80BF1939189600CDCA53 /* MulticolorPolylineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MulticolorPolylineSegment.m; sourceTree = "<group>"; };
 		FA0CFA89192C734000973491 /* genericsuccess.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = genericsuccess.wav; sourceTree = "<group>"; };
 		FA0CFA8B192C771900973491 /* MathController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathController.h; sourceTree = "<group>"; };
 		FA0CFA8C192C771900973491 /* MathController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathController.m; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				FAB9AA21192DB4CC00FF8E47 /* RunCell.m */,
 				FAB9AA30192DD64F00FF8E47 /* BadgeCell.h */,
 				FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */,
+				FA0B80BE1939189600CDCA53 /* MulticolorPolylineSegment.h */,
+				FA0B80BF1939189600CDCA53 /* MulticolorPolylineSegment.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 				FA1F95261929CF2600A0179A /* PastRunsViewController.m in Sources */,
 				FAB9AA2F192DD01300FF8E47 /* BadgeDetailsViewController.m in Sources */,
 				FA1F951D1929CF2600A0179A /* AppDelegate.m in Sources */,
+				FA0B80C01939189600CDCA53 /* MulticolorPolylineSegment.m in Sources */,
 				FA1F954A1929E36E00A0179A /* Run.m in Sources */,
 				FAB9AA32192DD64F00FF8E47 /* BadgeCell.m in Sources */,
 				FA30BD12192B319400CD453E /* HomeViewController.m in Sources */,

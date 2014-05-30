@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MoonRunner/Controller/MathController.m"
-            timestampString = "422864815.209825"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "+colorForLineBetweenPoint:andPoint:givenMapArray:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MoonRunner/Controller/ViewController/BadgesTableViewController.m"
             timestampString = "422953343.441575"
             startingColumnNumber = "9223372036854775807"
@@ -176,6 +160,22 @@
             startingLineNumber = "110"
             endingLineNumber = "110"
             landmarkName = "-earnStatusesForRuns:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoonRunner/Controller/MathController.m"
+            timestampString = "423173897.163993"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "+colorSegmentsForLocations:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

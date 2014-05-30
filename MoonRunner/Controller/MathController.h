@@ -17,8 +17,6 @@
 
 + (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds;
 
-+ (NSArray *)colorsForLocations:(NSArray *)locations;
-
-+ (UIColor *)colorForLineBetweenPoint:(CLLocationCoordinate2D)locationA andPoint:(CLLocationCoordinate2D)locationB givenMapArray:(NSArray *)colorCoordMapArray;
++ (NSArray *)colorSegmentsForLocations:(NSArray *)locations;
 
 @end

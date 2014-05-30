@@ -5,13 +5,14 @@
 #import "Badge.h"
 #import "BadgeController.h"
 #import "Location.h"
+#import "MulticolorPolylineSegment.h"
 
 static float const mapPadding = 1.1f;
 
 @interface RunDetailsViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) NSArray *locations;
-@property (strong, nonatomic) NSArray *colorMapArray;
+@property (strong, nonatomic) NSArray *colorSegmentArray;
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, weak) IBOutlet UILabel *distanceLabel;
@@ -84,9 +85,8 @@ static float const mapPadding = 1.1f;
         [self.mapView setRegion:[self mapRegion]];
         
         // make the line(s!) on the map
-        for (int i = 1; i < self.locations.count; i++) {
-            [self.mapView addOverlay:[self polyLineForLocation:[self.locations objectAtIndex:(i-1)] andLocation:[self.locations objectAtIndex:i]]];
-        }
+        [self.mapView addOverlays:self.colorSegmentArray];
+        
     } else {
         
         // no locations were found!
@@ -110,7 +110,7 @@ static float const mapPadding = 1.1f;
         _run = newDetailRun;
         
         self.locations = [newDetailRun.locations sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES]]];
-        self.colorMapArray = [MathController colorsForLocations:self.locations];
+        self.colorSegmentArray = [MathController colorSegmentsForLocations:self.locations];
     }
 }
 
@@ -150,33 +150,13 @@ static float const mapPadding = 1.1f;
     return [self.mapView regionThatFits:region];
 }
 
-- (MKPolyline *)polyLineForLocation:(Location *)locationA andLocation:(Location *)locationB
-{
-    CLLocationCoordinate2D coords[2];
-    
-    coords[0] = CLLocationCoordinate2DMake(locationA.latitude.doubleValue, locationA.longitude.doubleValue);
-    coords[1] = CLLocationCoordinate2DMake(locationB.latitude.doubleValue, locationB.longitude.doubleValue);
-    
-    return [MKPolyline polylineWithCoordinates:coords count:2];
-}
-
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
 {
-    if ([overlay isKindOfClass:[MKPolyline class]]) {
-        MKPolyline *polyLine = (MKPolyline *)overlay;
-        
+    if ([overlay isKindOfClass:[MulticolorPolylineSegment class]]) {
+        MulticolorPolylineSegment *polyLine = (MulticolorPolylineSegment *)overlay;
         MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
-        
-        aRenderer.fillColor = [[UIColor cyanColor] colorWithAlphaComponent:0.2];
-        
-        MKMapPoint *points = [polyLine points];
-        MKMapPoint pointA = points[0];
-        MKMapPoint pointB = points[1];
-        
-        aRenderer.strokeColor = [MathController colorForLineBetweenPoint:MKCoordinateForMapPoint(pointA) andPoint:MKCoordinateForMapPoint(pointB) givenMapArray:self.colorMapArray];
-        
+        aRenderer.strokeColor = polyLine.color;
         aRenderer.lineWidth = 3;
-        
         return aRenderer;
     }
     
