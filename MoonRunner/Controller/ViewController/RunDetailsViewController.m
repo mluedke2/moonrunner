@@ -87,6 +87,8 @@ static float const mapPadding = 1.1f;
         // make the line(s!) on the map
         [self.mapView addOverlays:self.colorSegmentArray];
         
+        [self.mapView addAnnotations:[[BadgeController defaultController] annotationViewsForRun:self.run]];
+        
     } else {
         
         // no locations were found!
@@ -161,6 +163,16 @@ static float const mapPadding = 1.1f;
     }
     
     return nil;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation
+{
+    MKAnnotationView *annView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"checkpoint"];
+    if (!annView) {
+        annView=[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"checkpoint"];
+        annView.image = [UIImage imageNamed:@"mapPin"];
+    }
+    return annView;
 }
 
 @end

@@ -10,6 +10,8 @@
 #import "Badge.h"
 #import "Run.h"
 #import "BadgeEarnStatus.h"
+#import <MapKit/MapKit.h>
+#import "Location.h"
 
 float const silverMultiplier = 1.05;
 float const goldMultiplier = 1.10;
@@ -20,11 +22,10 @@ float const goldMultiplier = 1.10;
 
 @end
 
-
 @implementation BadgeController
 
-+ (BadgeController *)defaultController {
-    
++ (BadgeController *)defaultController
+{
     static BadgeController* controller = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -35,7 +36,8 @@ float const goldMultiplier = 1.10;
     return controller;
 }
 
-+ (NSArray *)badgeArray {
++ (NSArray *)badgeArray
+{
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"badges" ofType:@"txt"];
     NSString *jsonContent = [NSString stringWithContentsOfFile:filePath usedEncoding:nil error:nil];
     NSData *data = [jsonContent dataUsingEncoding:NSUTF8StringEncoding];
@@ -50,7 +52,8 @@ float const goldMultiplier = 1.10;
     return badgeObjects;
 }
 
-+ (Badge *)badgeForDictionary:(NSDictionary *)dictionary {
++ (Badge *)badgeForDictionary:(NSDictionary *)dictionary
+{
     Badge *badge = [Badge new];
     badge.name = [dictionary objectForKey:@"name"];
     badge.information = [dictionary objectForKey:@"information"];
@@ -59,7 +62,8 @@ float const goldMultiplier = 1.10;
     return badge;
 }
 
-- (NSArray *)earnStatusesForRuns:(NSArray *)runs {
+- (NSArray *)earnStatusesForRuns:(NSArray *)runs
+{
     NSMutableArray *earnStatuses = [NSMutableArray array];
     
     for (Badge *badge in self.badges) {
@@ -113,7 +117,8 @@ float const goldMultiplier = 1.10;
     return earnStatuses;
 }
 
-- (Badge *)bestBadgeForDistance:(float)distance {
+- (Badge *)bestBadgeForDistance:(float)distance
+{
     Badge *bestBadge = self.badges.firstObject;
     for (Badge *badge in self.badges) {
         if (distance < badge.distance) {
@@ -124,7 +129,8 @@ float const goldMultiplier = 1.10;
     return bestBadge;
 }
 
-- (Badge *)nextBadgeForDistance:(float)distance {
+- (Badge *)nextBadgeForDistance:(float)distance
+{
     Badge *nextBadge;
     for (Badge *badge in self.badges) {
         nextBadge = badge;
@@ -135,5 +141,41 @@ float const goldMultiplier = 1.10;
     return nextBadge;
 }
 
+- (NSArray *)annotationViewsForRun:(Run *)run
+{
+    NSMutableArray *annotationViews = [NSMutableArray array];
+    
+    int locationIndex = 1;
+    float distance = 0;
+    
+    for (Badge *badge in self.badges) {
+        if (badge.distance > run.distance.floatValue) {
+            break;
+        }
+        
+        while (locationIndex < run.locations.count) {
+            
+            Location *firstLoc = [run.locations objectAtIndex:(locationIndex-1)];
+            Location *secondLoc = [run.locations objectAtIndex:locationIndex];
+            
+            CLLocation *firstLocCL = [[CLLocation alloc] initWithLatitude:firstLoc.latitude.doubleValue longitude:firstLoc.longitude.doubleValue];
+            CLLocation *secondLocCL = [[CLLocation alloc] initWithLatitude:secondLoc.latitude.doubleValue longitude:secondLoc.longitude.doubleValue];
+            
+            distance += [secondLocCL distanceFromLocation:firstLocCL];
+            
+            locationIndex++;
+            
+            if (distance >= badge.distance) {
+                
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                annotation.coordinate = secondLocCL.coordinate;
+                [annotationViews addObject:annotation];
+                break;
+            }
+        }
+    }
+    
+    return annotationViews;
+}
 
 @end
