@@ -171,6 +171,7 @@ static float const mapPadding = 1.1f;
     if (!annView) {
         annView=[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"checkpoint"];
         annView.image = [UIImage imageNamed:@"mapPin"];
+        annView.canShowCallout = YES;
     }
     return annView;
 }
