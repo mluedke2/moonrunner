@@ -13,6 +13,7 @@
 #import <MapKit/MapKit.h>
 #import "Location.h"
 #import "MathController.h"
+#import "BadgeAnnotation.h"
 
 float const silverMultiplier = 1.05;
 float const goldMultiplier = 1.10;
@@ -166,10 +167,11 @@ float const goldMultiplier = 1.10;
             locationIndex++;
             
             if (distance >= badge.distance) {
-                MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+                BadgeAnnotation *annotation = [[BadgeAnnotation alloc] init];
                 annotation.coordinate = secondLocCL.coordinate;
                 annotation.title = badge.name;
                 annotation.subtitle = [MathController stringifyDistance:badge.distance];
+                annotation.imageName = badge.imageName;
                 [annotations addObject:annotation];
                 break;
             }

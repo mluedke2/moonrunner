@@ -6,6 +6,7 @@
 #import "BadgeController.h"
 #import "Location.h"
 #import "MulticolorPolylineSegment.h"
+#import "BadgeAnnotation.h"
 
 static float const mapPadding = 1.1f;
 
@@ -167,12 +168,20 @@ static float const mapPadding = 1.1f;
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation
 {
+    BadgeAnnotation *badgeAnnotation = (BadgeAnnotation *)annotation;
+        
     MKAnnotationView *annView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"checkpoint"];
     if (!annView) {
         annView=[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"checkpoint"];
         annView.image = [UIImage imageNamed:@"mapPin"];
         annView.canShowCallout = YES;
     }
+    
+    UIImageView *badgeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 75, 50)];
+    badgeImageView.image = [UIImage imageNamed:badgeAnnotation.imageName];
+    badgeImageView.contentMode = UIViewContentModeScaleAspectFit;
+    annView.leftCalloutAccessoryView = badgeImageView;
+    
     return annView;
 }
 

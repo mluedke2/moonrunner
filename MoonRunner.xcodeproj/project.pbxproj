@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA0B80C01939189600CDCA53 /* MulticolorPolylineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0B80BF1939189600CDCA53 /* MulticolorPolylineSegment.m */; };
-		FA0CFA8A192C734000973491 /* genericsuccess.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA0CFA89192C734000973491 /* genericsuccess.wav */; };
+		FA0CFA8A192C734000973491 /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = FA0CFA89192C734000973491 /* success.wav */; };
 		FA0CFA8D192C771900973491 /* MathController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0CFA8C192C771900973491 /* MathController.m */; };
 		FA1E89441932F65E0039A4CD /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA1E89431932F65E0039A4CD /* earth.jpg */; };
 		FA1E89461932F80D0039A4CD /* badges.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA1E89451932F80D0039A4CD /* badges.txt */; };
@@ -40,6 +40,7 @@
 		FAB9AA2F192DD01300FF8E47 /* BadgeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA2E192DD01300FF8E47 /* BadgeDetailsViewController.m */; };
 		FAB9AA32192DD64F00FF8E47 /* BadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */; };
 		FAB9AA35192DD92300FF8E47 /* BadgesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB9AA34192DD92300FF8E47 /* BadgesTableViewController.m */; };
+		FAC9882B1949084800B046E6 /* BadgeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC9882A1949084800B046E6 /* BadgeAnnotation.m */; };
 		FAE22DA11931A1E900F362F7 /* ariel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D851931A1E900F362F7 /* ariel.jpg */; };
 		FAE22DA31931A1E900F362F7 /* atmosphere.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D871931A1E900F362F7 /* atmosphere.jpg */; };
 		FAE22DA41931A1E900F362F7 /* callisto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FAE22D881931A1E900F362F7 /* callisto.jpg */; };
@@ -83,7 +84,7 @@
 /* Begin PBXFileReference section */
 		FA0B80BE1939189600CDCA53 /* MulticolorPolylineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MulticolorPolylineSegment.h; sourceTree = "<group>"; };
 		FA0B80BF1939189600CDCA53 /* MulticolorPolylineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MulticolorPolylineSegment.m; sourceTree = "<group>"; };
-		FA0CFA89192C734000973491 /* genericsuccess.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = genericsuccess.wav; sourceTree = "<group>"; };
+		FA0CFA89192C734000973491 /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = success.wav; sourceTree = "<group>"; };
 		FA0CFA8B192C771900973491 /* MathController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathController.h; sourceTree = "<group>"; };
 		FA0CFA8C192C771900973491 /* MathController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathController.m; sourceTree = "<group>"; };
 		FA1E89431932F65E0039A4CD /* earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earth.jpg; sourceTree = "<group>"; };
@@ -131,6 +132,8 @@
 		FAB9AA31192DD64F00FF8E47 /* BadgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeCell.m; sourceTree = "<group>"; };
 		FAB9AA33192DD92300FF8E47 /* BadgesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgesTableViewController.h; sourceTree = "<group>"; };
 		FAB9AA34192DD92300FF8E47 /* BadgesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesTableViewController.m; sourceTree = "<group>"; };
+		FAC988291949084800B046E6 /* BadgeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeAnnotation.h; sourceTree = "<group>"; };
+		FAC9882A1949084800B046E6 /* BadgeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeAnnotation.m; sourceTree = "<group>"; };
 		FAE22D851931A1E900F362F7 /* ariel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ariel.jpg; sourceTree = "<group>"; };
 		FAE22D871931A1E900F362F7 /* atmosphere.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = atmosphere.jpg; sourceTree = "<group>"; };
 		FAE22D881931A1E900F362F7 /* callisto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = callisto.jpg; sourceTree = "<group>"; };
@@ -191,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE22DBD1931A21D00F362F7 /* badges */,
-				FA0CFA89192C734000973491 /* genericsuccess.wav */,
+				FA0CFA89192C734000973491 /* success.wav */,
 				FA1F952A1929CF2600A0179A /* Images.xcassets */,
 			);
 			path = Resources;
@@ -262,6 +265,8 @@
 				FA70BB06192E8784004C1956 /* BadgeEarnStatus.m */,
 				FA24F25319481C6200500593 /* Run.h */,
 				FA24F25419481C6200500593 /* Run.m */,
+				FAC988291949084800B046E6 /* BadgeAnnotation.h */,
+				FAC9882A1949084800B046E6 /* BadgeAnnotation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -435,7 +440,7 @@
 				FAE22DB61931A1E900F362F7 /* rhea.jpg in Resources */,
 				FAE22DB01931A1E900F362F7 /* mimas.jpg in Resources */,
 				FAE22DA31931A1E900F362F7 /* atmosphere.jpg in Resources */,
-				FA0CFA8A192C734000973491 /* genericsuccess.wav in Resources */,
+				FA0CFA8A192C734000973491 /* success.wav in Resources */,
 				FAE22DBC1931A1E900F362F7 /* umbriel.jpg in Resources */,
 				FA1F952B1929CF2600A0179A /* Images.xcassets in Resources */,
 				FAE22DA91931A1E900F362F7 /* europa.jpg in Resources */,
@@ -493,6 +498,7 @@
 				FAB9AA32192DD64F00FF8E47 /* BadgeCell.m in Sources */,
 				FA30BD12192B319400CD453E /* HomeViewController.m in Sources */,
 				FAB9AA25192DBEB500FF8E47 /* BadgeController.m in Sources */,
+				FAC9882B1949084800B046E6 /* BadgeAnnotation.m in Sources */,
 				FA1F95231929CF2600A0179A /* RunMaster.xcdatamodeld in Sources */,
 				FA1F95191929CF2600A0179A /* main.m in Sources */,
 				FA30BD0B192B17CF00CD453E /* NewRunViewController.m in Sources */,
