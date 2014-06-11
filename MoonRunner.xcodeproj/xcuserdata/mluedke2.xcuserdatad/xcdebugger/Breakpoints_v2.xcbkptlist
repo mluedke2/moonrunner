@@ -191,7 +191,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "174"
             endingLineNumber = "174"
-            landmarkName = "-annotationViewsForRun:"
+            landmarkName = "-annotationsForRun:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

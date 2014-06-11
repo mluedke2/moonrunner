@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xBs-vg-yT1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xBs-vg-yT1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -115,12 +115,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spaceship-rotated" translatesAutoresizingMaskIntoConstraints="NO" id="h24-f9-UMy">
-                                <rect key="frame" x="20" y="320" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="atmosphere.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hkN-dO-xP5">
-                                <rect key="frame" x="220" y="320" width="80" height="80"/>
+                                <rect key="frame" x="120" y="320" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Poz-fw-ET9">
@@ -153,7 +149,6 @@
                         <outlet property="nextBadgeImageView" destination="hkN-dO-xP5" id="Ojx-rQ-c7G"/>
                         <outlet property="nextBadgeLabel" destination="EvV-i9-yVx" id="gDw-TP-mD4"/>
                         <outlet property="paceLabel" destination="Hg4-d5-GuQ" id="uY9-O8-VuW"/>
-                        <outlet property="progressImageView" destination="h24-f9-UMy" id="TbE-CP-vZO"/>
                         <outlet property="promptLabel" destination="5Pj-BO-wCG" id="MOb-wA-du5"/>
                         <outlet property="startButton" destination="j9T-f3-Mx1" id="gSL-tH-0a9"/>
                         <outlet property="stopButton" destination="22j-y4-Kbu" id="CjE-U8-O4o"/>
@@ -445,7 +440,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BADGE MODE:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="59" translatesAutoresizingMaskIntoConstraints="NO" id="0zu-rj-pTb">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SPACE MODE:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="59" translatesAutoresizingMaskIntoConstraints="NO" id="0zu-rj-pTb">
                                 <rect key="frame" x="246" y="466" width="59" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -514,7 +509,6 @@
         <image name="info_pressed" width="60" height="59"/>
         <image name="red-btn" width="97" height="62"/>
         <image name="spaceship-gold" width="50" height="68"/>
-        <image name="spaceship-rotated" width="139" height="102"/>
         <image name="spaceship-silver" width="50" height="68"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

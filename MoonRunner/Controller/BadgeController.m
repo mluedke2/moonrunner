@@ -142,9 +142,9 @@ float const goldMultiplier = 1.10;
     return nextBadge;
 }
 
-- (NSArray *)annotationViewsForRun:(Run *)run
+- (NSArray *)annotationsForRun:(Run *)run
 {
-    NSMutableArray *annotationViews = [NSMutableArray array];
+    NSMutableArray *annotations = [NSMutableArray array];
     
     int locationIndex = 1;
     float distance = 0;
@@ -170,13 +170,13 @@ float const goldMultiplier = 1.10;
                 annotation.coordinate = secondLocCL.coordinate;
                 annotation.title = badge.name;
                 annotation.subtitle = [MathController stringifyDistance:badge.distance];
-                [annotationViews addObject:annotation];
+                [annotations addObject:annotation];
                 break;
             }
         }
     }
     
-    return annotationViews;
+    return annotations;
 }
 
 @end

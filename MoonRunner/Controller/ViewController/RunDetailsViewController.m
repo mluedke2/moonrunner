@@ -44,7 +44,7 @@ static float const mapPadding = 1.1f;
     self.mapView.hidden = sender.isOn;
 }
 
--(IBAction)infoButtonPressed:(UIButton *)sender
+- (IBAction)infoButtonPressed:(UIButton *)sender
 {
     Badge *badge = [[BadgeController defaultController] bestBadgeForDistance:self.run.distance.floatValue];
     
@@ -87,7 +87,7 @@ static float const mapPadding = 1.1f;
         // make the line(s!) on the map
         [self.mapView addOverlays:self.colorSegmentArray];
         
-        [self.mapView addAnnotations:[[BadgeController defaultController] annotationViewsForRun:self.run]];
+        [self.mapView addAnnotations:[[BadgeController defaultController] annotationsForRun:self.run]];
         
     } else {
         

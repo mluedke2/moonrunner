@@ -24,6 +24,6 @@ extern float const goldMultiplier;
 
 - (Badge *)nextBadgeForDistance:(float)distance;
 
-- (NSArray *)annotationViewsForRun:(Run *)run;
+- (NSArray *)annotationsForRun:(Run *)run;
 
 @end
