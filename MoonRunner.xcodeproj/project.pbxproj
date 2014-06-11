@@ -29,8 +29,8 @@
 		FA1F95331929CF2600A0179A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950A1929CF2600A0179A /* Foundation.framework */; };
 		FA1F95341929CF2600A0179A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F950E1929CF2600A0179A /* UIKit.framework */; };
 		FA1F95351929CF2600A0179A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1F95101929CF2600A0179A /* CoreData.framework */; };
-		FA1F954A1929E36E00A0179A /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F95491929E36E00A0179A /* Run.m */; };
 		FA1F954D1929E36F00A0179A /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1F954C1929E36F00A0179A /* Location.m */; };
+		FA24F25519481C6200500593 /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = FA24F25419481C6200500593 /* Run.m */; };
 		FA30BD0B192B17CF00CD453E /* NewRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA30BD0A192B17CF00CD453E /* NewRunViewController.m */; };
 		FA30BD12192B319400CD453E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA30BD11192B319400CD453E /* HomeViewController.m */; };
 		FA70BB07192E8784004C1956 /* BadgeEarnStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70BB06192E8784004C1956 /* BadgeEarnStatus.m */; };
@@ -109,10 +109,10 @@
 		FA1F952A1929CF2600A0179A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA1F95301929CF2600A0179A /* MoonRunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonRunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1F95311929CF2600A0179A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		FA1F95481929E36E00A0179A /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
-		FA1F95491929E36E00A0179A /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
 		FA1F954B1929E36F00A0179A /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		FA1F954C1929E36F00A0179A /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		FA24F25319481C6200500593 /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
+		FA24F25419481C6200500593 /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
 		FA30BD09192B17CF00CD453E /* NewRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRunViewController.h; sourceTree = "<group>"; };
 		FA30BD0A192B17CF00CD453E /* NewRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRunViewController.m; sourceTree = "<group>"; };
 		FA30BD10192B319400CD453E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -255,13 +255,13 @@
 			children = (
 				FA1F954B1929E36F00A0179A /* Location.h */,
 				FA1F954C1929E36F00A0179A /* Location.m */,
-				FA1F95481929E36E00A0179A /* Run.h */,
-				FA1F95491929E36E00A0179A /* Run.m */,
 				FAB9AA26192DC76B00FF8E47 /* Badge.h */,
 				FAB9AA27192DC76B00FF8E47 /* Badge.m */,
 				FA1F95211929CF2600A0179A /* RunMaster.xcdatamodeld */,
 				FA70BB05192E8784004C1956 /* BadgeEarnStatus.h */,
 				FA70BB06192E8784004C1956 /* BadgeEarnStatus.m */,
+				FA24F25319481C6200500593 /* Run.h */,
+				FA24F25419481C6200500593 /* Run.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,8 +488,8 @@
 				FA1F95261929CF2600A0179A /* PastRunsViewController.m in Sources */,
 				FAB9AA2F192DD01300FF8E47 /* BadgeDetailsViewController.m in Sources */,
 				FA1F951D1929CF2600A0179A /* AppDelegate.m in Sources */,
+				FA24F25519481C6200500593 /* Run.m in Sources */,
 				FA0B80C01939189600CDCA53 /* MulticolorPolylineSegment.m in Sources */,
-				FA1F954A1929E36E00A0179A /* Run.m in Sources */,
 				FAB9AA32192DD64F00FF8E47 /* BadgeCell.m in Sources */,
 				FA30BD12192B319400CD453E /* HomeViewController.m in Sources */,
 				FAB9AA25192DBEB500FF8E47 /* BadgeController.m in Sources */,

@@ -1,18 +1,19 @@
 //
 //  Run.m
-//  RunMaster
+//  MoonRunner
 //
-//  Created by Matt Luedke on 5/18/14.
+//  Created by Matt Luedke on 6/10/14.
 //  Copyright (c) 2014 Matt Luedke. All rights reserved.
 //
 
 #import "Run.h"
+#import "Location.h"
 
 
 @implementation Run
 
-@dynamic duration;
 @dynamic distance;
+@dynamic duration;
 @dynamic timestamp;
 @dynamic locations;
 

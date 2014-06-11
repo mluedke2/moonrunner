@@ -112,17 +112,17 @@ static NSString * const detailSegueName = @"NewRunDetails";
     newRun.duration = [NSNumber numberWithInt:self.seconds];
     newRun.timestamp = [NSDate date];
     
-    NSMutableSet *locationSet = [NSMutableSet set];
+    NSMutableArray *locationArray = [NSMutableArray array];
     for (CLLocation *location in self.locations) {
         Location *locationObject = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
         
         locationObject.timestamp = location.timestamp;
         locationObject.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
         locationObject.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
-        [locationSet addObject:locationObject];
+        [locationArray addObject:locationObject];
     }
     
-    newRun.locations = locationSet;
+    newRun.locations = [NSOrderedSet orderedSetWithArray:locationArray];
     self.run = newRun;
     
     // Save the context.
