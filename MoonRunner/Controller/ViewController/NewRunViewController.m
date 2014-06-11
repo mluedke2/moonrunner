@@ -241,7 +241,7 @@ static NSString * const detailSegueName = @"NewRunDetails";
     
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     
-    if (abs(howRecent) < 10.0 && newLocation.horizontalAccuracy < 50) {
+    if (abs(howRecent) < 10.0 && newLocation.horizontalAccuracy < 20) {
         
         // update distance
         if (self.locations.count > 0) {
