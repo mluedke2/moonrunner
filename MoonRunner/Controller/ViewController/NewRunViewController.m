@@ -9,6 +9,7 @@
 #import "NewRunViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <MapKit/MapKit.h>
 #import "MathController.h"
 #import "Run.h"
 #import "Location.h"
@@ -18,7 +19,7 @@
 
 static NSString * const detailSegueName = @"NewRunDetails";
 
-@interface NewRunViewController () <UIActionSheetDelegate, CLLocationManagerDelegate>
+@interface NewRunViewController () <UIActionSheetDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property int seconds;
 @property float distance;
@@ -37,6 +38,7 @@ static NSString * const detailSegueName = @"NewRunDetails";
 @property (nonatomic, weak) IBOutlet UIImageView *nextBadgeImageView;
 @property (nonatomic, weak) IBOutlet UIButton *startButton;
 @property (nonatomic, weak) IBOutlet UIButton *stopButton;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -59,6 +61,7 @@ static NSString * const detailSegueName = @"NewRunDetails";
     self.stopButton.hidden = YES;
     self.nextBadgeImageView.hidden = YES;
     self.progressImageView.hidden = YES;
+    self.mapView.hidden = YES;
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -83,6 +86,7 @@ static NSString * const detailSegueName = @"NewRunDetails";
     self.progressImageView.hidden = NO;
     self.nextBadgeImageView.hidden = NO;
     self.nextBadgeLabel.hidden = NO;
+    self.mapView.hidden = NO;
     
     self.seconds = 0;
     
@@ -235,21 +239,47 @@ static NSString * const detailSegueName = @"NewRunDetails";
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
 {
-    CLLocation *newLocation = [locations lastObject];
-    
-    NSDate *eventDate = newLocation.timestamp;
-    
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    
-    if (abs(howRecent) < 10.0 && newLocation.horizontalAccuracy < 20) {
+    for (CLLocation *newLocation in locations) {
         
-        // update distance
-        if (self.locations.count > 0) {
-            self.distance += [newLocation distanceFromLocation:self.locations.lastObject];
+        NSDate *eventDate = newLocation.timestamp;
+        
+        NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+        
+        if (abs(howRecent) < 10.0 && newLocation.horizontalAccuracy < 20) {
+            
+            // update distance
+            if (self.locations.count > 0) {
+                self.distance += [newLocation distanceFromLocation:self.locations.lastObject];
+                
+                CLLocationCoordinate2D coords[2];
+                coords[0] = ((CLLocation *)self.locations.lastObject).coordinate;
+                coords[1] = newLocation.coordinate;
+
+                MKCoordinateRegion region =
+                MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 500, 500);
+                [self.mapView setRegion:region animated:YES];
+                
+                [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords count:2]];
+            }
+            
+            [self.locations addObject:newLocation];
         }
-        
-        [self.locations addObject:newLocation];
     }
+}
+
+#pragma mark - MKMapViewDelegate
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
+{
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolyline *polyLine = (MKPolyline *)overlay;
+        MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
+        aRenderer.strokeColor = [UIColor blueColor];
+        aRenderer.lineWidth = 3;
+        return aRenderer;
+    }
+    
+    return nil;
 }
 
 #pragma mark - Navigation

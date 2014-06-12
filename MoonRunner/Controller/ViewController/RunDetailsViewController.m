@@ -12,7 +12,6 @@ static float const mapPadding = 1.1f;
 
 @interface RunDetailsViewController () <MKMapViewDelegate>
 
-@property (strong, nonatomic) NSArray *locations;
 @property (strong, nonatomic) NSArray *colorSegmentArray;
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
@@ -112,8 +111,7 @@ static float const mapPadding = 1.1f;
     if (_run != newDetailRun) {
         _run = newDetailRun;
         
-        self.locations = [newDetailRun.locations sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES]]];
-        self.colorSegmentArray = [MathController colorSegmentsForLocations:self.locations];
+        self.colorSegmentArray = [MathController colorSegmentsForLocations:newDetailRun.locations.array];
     }
 }
 
@@ -122,14 +120,14 @@ static float const mapPadding = 1.1f;
 - (MKCoordinateRegion)mapRegion
 {
     MKCoordinateRegion region;
-    Location *initialLoc = self.locations.firstObject;
+    Location *initialLoc = self.run.locations.firstObject;
     
     float minLat = initialLoc.latitude.floatValue;
     float minLng = initialLoc.longitude.floatValue;
     float maxLat = initialLoc.latitude.floatValue;
     float maxLng = initialLoc.longitude.floatValue;
     
-    for (Location *location in self.locations) {
+    for (Location *location in self.run.locations) {
         if (location.latitude.floatValue < minLat) {
             minLat = location.latitude.floatValue;
         }
@@ -150,7 +148,7 @@ static float const mapPadding = 1.1f;
     region.span.latitudeDelta = (maxLat - minLat) * mapPadding;
     region.span.longitudeDelta = (maxLng - minLng) * mapPadding;
     
-    return [self.mapView regionThatFits:region];
+    return region;
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay

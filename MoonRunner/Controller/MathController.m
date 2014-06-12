@@ -146,7 +146,7 @@ static float const metersInMile = 1609.344;
     CGFloat y_red = 1.0f;
     CGFloat y_green = 215/255.0f;
     CGFloat y_blue = 0.0f;
-
+    
     // RGB for green (fastest)
     CGFloat g_red = 0.0f;
     CGFloat g_green = 146/255.0f;
