@@ -13,6 +13,7 @@
 static bool const isMetric = YES;
 static float const metersInKM = 1000;
 static float const metersInMile = 1609.344;
+static const int idealSmoothReachSize = 33; // about 133 locations/mi
 
 @implementation MathController
 
@@ -113,7 +114,7 @@ static float const metersInMile = 1609.344;
 + (NSArray *)colorSegmentsForLocations:(NSArray *)locations
 {
     // make array of all speeds, find slowest+fastest
-    NSMutableArray *speeds = [NSMutableArray array];
+    NSMutableArray *rawSpeeds = [NSMutableArray array];
     double slowestSpeed = DBL_MAX;
     double fastestSpeed = 0.0;
     
@@ -131,11 +132,52 @@ static float const metersInMile = 1609.344;
         slowestSpeed = speed < slowestSpeed ? speed : slowestSpeed;
         fastestSpeed = speed > fastestSpeed ? speed : fastestSpeed;
         
-        [speeds addObject:[NSNumber numberWithDouble:speed]];
+        [rawSpeeds addObject:[NSNumber numberWithDouble:speed]];
     }
     
+    // smooth the raw speeds
+    NSMutableArray *smoothSpeeds = [NSMutableArray array];
+    
+    for (int i = 0; i < rawSpeeds.count; i++) {
+        
+        // set to ideal size
+        int lowerBound = i - idealSmoothReachSize / 2;
+        int upperBound = i + idealSmoothReachSize / 2;
+        
+        // scale back reach as necessary
+        if (lowerBound < 0) {
+            lowerBound = 0;
+        }
+        
+        if (upperBound > ((int)rawSpeeds.count - 1)) {
+            upperBound = (int)rawSpeeds.count - 1;
+        }
+        
+        // define range for average
+        NSRange range;
+        range.location = lowerBound;
+        range.length = upperBound - lowerBound;
+        
+        // get values to average
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+        NSArray *relevantSpeeds = [rawSpeeds objectsAtIndexes:indexSet];
+        
+        double total = 0.0;
+        
+        for (NSNumber *speed in relevantSpeeds) {
+            total += speed.doubleValue;
+        }
+        
+        double smoothAverage = total / (double)(upperBound - lowerBound);
+        
+        [smoothSpeeds addObject:[NSNumber numberWithDouble:smoothAverage]];
+    }
+    
+    // sort the smoothed speeds
+    NSArray *sortedArray = [smoothSpeeds sortedArrayUsingSelector:@selector(compare:)];
+    
     // now knowing the slowest+fastest, we can get mean too
-    double meanSpeed = (slowestSpeed + fastestSpeed)/2;
+    double medianSpeed = ((NSNumber *)[sortedArray objectAtIndex:(locations.count/2)]).doubleValue;
     
     // RGB for red (slowest)
     CGFloat r_red = 1.0f;
@@ -165,12 +207,13 @@ static float const metersInMile = 1609.344;
         coords[1].latitude = secondLoc.latitude.doubleValue;
         coords[1].longitude = secondLoc.longitude.doubleValue;
         
-        NSNumber *speed = [speeds objectAtIndex:(i-1)];
+        NSNumber *speed = [smoothSpeeds objectAtIndex:(i-1)];
         UIColor *color = [UIColor blackColor];
         
         // between red and yellow
-        if (speed.doubleValue < meanSpeed) {
-            double ratio = (speed.doubleValue - slowestSpeed) / (meanSpeed - slowestSpeed);
+        if (speed.doubleValue < medianSpeed) {
+            NSUInteger index = [sortedArray indexOfObject:speed];
+            double ratio = (int)index / ((int)locations.count/2.0);
             CGFloat red = r_red + ratio * (y_red - r_red);
             CGFloat green = r_green + ratio * (y_green - r_green);
             CGFloat blue = r_blue + ratio * (y_blue - r_blue);
@@ -178,7 +221,8 @@ static float const metersInMile = 1609.344;
             
         // between yellow and green
         } else {
-            double ratio = (speed.doubleValue - meanSpeed) / (fastestSpeed - meanSpeed);
+            NSUInteger index = [sortedArray indexOfObject:speed];
+            double ratio = ((int)index - (int)locations.count/2.0) / ((int)locations.count/2.0);
             CGFloat red = y_red + ratio * (g_red - y_red);
             CGFloat green = y_green + ratio * (g_green - y_green);
             CGFloat blue = y_blue + ratio * (g_blue - y_blue);
