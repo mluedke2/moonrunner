@@ -113,6 +113,19 @@ static const int idealSmoothReachSize = 33; // about 133 locations/mi
 
 + (NSArray *)colorSegmentsForLocations:(NSArray *)locations
 {
+    if (locations.count == 1){
+        Location *loc      = [locations firstObject];
+        CLLocationCoordinate2D coords[2];
+        coords[0].latitude      = loc.latitude.doubleValue;
+        coords[0].longitude     = loc.longitude.doubleValue;
+        coords[1].latitude      = loc.latitude.doubleValue;
+        coords[1].longitude     = loc.longitude.doubleValue;
+        
+        MulticolorPolylineSegment *segment = [MulticolorPolylineSegment polylineWithCoordinates:coords count:2];
+        segment.color = [UIColor blackColor];
+        return @[segment];
+    }    
+    
     // make array of all speeds, find slowest+fastest
     NSMutableArray *rawSpeeds = [NSMutableArray array];
     double slowestSpeed = DBL_MAX;
