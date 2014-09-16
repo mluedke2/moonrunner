@@ -26,6 +26,8 @@
 	<true/>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Mission Control requests your location coordinates.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
