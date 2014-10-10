@@ -656,7 +656,6 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "RunmasterGeneralTests/RunMasterTests-Info.plist";
 				PRODUCT_NAME = MoonRunnerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -674,7 +673,6 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RunmasterGeneral/RunmasterGeneral-Prefix.pch";
-				INFOPLIST_FILE = "RunmasterGeneralTests/RunMasterTests-Info.plist";
 				PRODUCT_NAME = MoonRunnerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

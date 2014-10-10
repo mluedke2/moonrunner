@@ -9,6 +9,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	// Make status bar light throughout the app
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     HomeViewController *homeViewController = [navigationController viewControllers][0];
     homeViewController.managedObjectContext = self.managedObjectContext;
