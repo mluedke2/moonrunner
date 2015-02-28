@@ -126,10 +126,8 @@ static const int idealSmoothReachSize = 33; // about 133 locations/mi
         return @[segment];
     }    
     
-    // make array of all speeds, find slowest+fastest
+    // make array of all speeds
     NSMutableArray *rawSpeeds = [NSMutableArray array];
-    double slowestSpeed = DBL_MAX;
-    double fastestSpeed = 0.0;
     
     for (int i = 1; i < locations.count; i++) {
         Location *firstLoc = [locations objectAtIndex:(i-1)];
@@ -141,9 +139,6 @@ static const int idealSmoothReachSize = 33; // about 133 locations/mi
         double distance = [secondLocCL distanceFromLocation:firstLocCL];
         double time = [secondLoc.timestamp timeIntervalSinceDate:firstLoc.timestamp];
         double speed = distance/time;
-        
-        slowestSpeed = speed < slowestSpeed ? speed : slowestSpeed;
-        fastestSpeed = speed > fastestSpeed ? speed : fastestSpeed;
         
         [rawSpeeds addObject:[NSNumber numberWithDouble:speed]];
     }
@@ -189,7 +184,7 @@ static const int idealSmoothReachSize = 33; // about 133 locations/mi
     // sort the smoothed speeds
     NSArray *sortedArray = [smoothSpeeds sortedArrayUsingSelector:@selector(compare:)];
     
-    // now knowing the slowest+fastest, we can get mean too
+    // find median
     double medianSpeed = ((NSNumber *)[sortedArray objectAtIndex:(locations.count/2)]).doubleValue;
     
     // RGB for red (slowest)
